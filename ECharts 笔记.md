@@ -6,7 +6,7 @@
 
 >   true/false 包括所有内容形成的矩形 / 不包括...
 
-![1565144363693](/home/dixin/.config/Typora/typora-user-images/1565144363693.png)
+![1565144363693](images/1565144363693.png)
 
 ## axisPointer 坐标轴指示器
 
@@ -16,10 +16,10 @@
 >
 >   link.group中定义坐标轴联动
 
-![1565145904430](/home/dixin/.config/Typora/typora-user-images/1565145904430.png)
+![1565145904430](images/1565145904430.png)
 
 ## brush 区域选择组件
 
-### brush 中的bru
+### brush 中的brushType
 
-![1565151321734](/home/dixin/.config/Typora/typora-user-images/1565151321734.png)
+![1565151321734](images/1565151321734.png)
