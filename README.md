@@ -8,3 +8,5 @@ https://github.com/dixinL/Essay/blob/master/%E5%9C%A8%20Hello%20World.go%20%E4%B
 https://github.com/dixinL/Essay/blob/master/ECharts%20%E7%AC%94%E8%AE%B0.md
 ## MD5解析.md
 https://github.com/dixinL/Essay/blob/master/MD5%E8%A7%A3%E6%9E%90.md
+## CSS权重计算规则.md
+https://github.com/dixinL/Essay/blob/master/CSS%E6%9D%83%E9%87%8D%E8%AE%A1%E7%AE%97%E8%A7%84%E5%88%99.md
