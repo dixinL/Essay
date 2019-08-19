@@ -14,3 +14,7 @@ https://github.com/dixinL/Essay/blob/master/CSS%E6%9D%83%E9%87%8D%E8%AE%A1%E7%AE
 https://github.com/dixinL/Essay/blob/master/%E5%9B%BE%E8%A7%A3HTTP%E7%AC%94%E8%AE%B0.md
 ## 图解HTTP笔记 2.md
 https://github.com/dixinL/Essay/blob/master/%E5%9B%BE%E8%A7%A3HTTP%E7%AC%94%E8%AE%B0%202.md
+## ECharts 笔记 2.md
+https://github.com/dixinL/Essay/blob/master/ECharts%20%E7%AC%94%E8%AE%B0%202.md
+## 图解 TCP/IP 笔记.md
+https://github.com/dixinL/Essay/blob/master/%E5%9B%BE%E8%A7%A3%20TCPIP%20%E7%AC%94%E8%AE%B0.md
