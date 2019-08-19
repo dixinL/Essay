@@ -2,4 +2,5 @@
 
 ## 基础知识
 
-![1566203316865](C:\Users\dixin\AppData\Roaming\Typora\typora-user-images\1566203316865.png)
+![1566206356050](images/1566206356050.png)
+
