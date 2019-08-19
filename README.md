@@ -12,5 +12,5 @@ https://github.com/dixinL/Essay/blob/master/MD5%E8%A7%A3%E6%9E%90.md
 https://github.com/dixinL/Essay/blob/master/CSS%E6%9D%83%E9%87%8D%E8%AE%A1%E7%AE%97%E8%A7%84%E5%88%99.md
 ## 图解HTTP笔记.md
 https://github.com/dixinL/Essay/blob/master/%E5%9B%BE%E8%A7%A3HTTP%E7%AC%94%E8%AE%B0.md
-## 图解HTTP笔记2.md
-https://github.com/dixinL/Essay/blob/master/%E5%9B%BE%E8%A7%A3HTTP%E7%AC%94%E8%AE%B02.md
+## 图解HTTP笔记 2.md
+https://github.com/dixinL/Essay/blob/master/%E5%9B%BE%E8%A7%A3HTTP%E7%AC%94%E8%AE%B0%202.md
