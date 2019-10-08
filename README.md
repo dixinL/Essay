@@ -20,3 +20,5 @@ https://github.com/dixinL/Essay/blob/master/ECharts%20%E7%AC%94%E8%AE%B0%202.md
 https://github.com/dixinL/Essay/blob/master/%E5%9B%BE%E8%A7%A3%20TCPIP%20%E7%AC%94%E8%AE%B0.md
 ## Docker & K8S 简述.md
 https://github.com/dixinL/Essay/blob/master/Docker%26K8S%E7%AE%80%E8%BF%B0.md
+## ECharts 笔记 分组篇.md
+https://github.com/dixinL/Essay/blob/master/ECharts%20%E7%AC%94%E8%AE%B0%20%E5%88%86%E7%BB%84%E7%AF%87.md
