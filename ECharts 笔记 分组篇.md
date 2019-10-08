@@ -9,4 +9,5 @@
 
 ![1570522483307](images/1570522483307.png)
 
-[echarts 联动 演示](example/echarts-connect/index.html?_blank)
+[echarts 联动 演示](https://dixinl.github.io/Essay/example/echarts-connect/index.html)
+
