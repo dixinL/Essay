@@ -1,5 +1,7 @@
 # 在 Hello World.go 中 GO 的简单语法特性
 
+##### [Essay](https://dixinl.github.io/Essay/)
+
 ##  Hello World 文件中的关键点
 
 1.  代码第一行写明package；上例中，使用一个文件单独运行的程序必须放在package main下面，否则在go run运行时会报错：

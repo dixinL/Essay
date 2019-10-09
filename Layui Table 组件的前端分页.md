@@ -1,5 +1,7 @@
 # Layui Table 组件的前端分页
 
+##### [Essay](https://dixinl.github.io/Essay/)
+
 ## 起因
 
 Layui Table 组件无法对大量数据进行前端分页由于使用了 github.io，暂时无法动态获取数据，且对于页面美观的要求，需要保留分页功能，数据部分的解决办法为 json 文件。但 json 文件无法处理数据信息，只能返回所有数据。然而前端 Layui 组件不支持前端分页。

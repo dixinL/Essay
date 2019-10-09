@@ -1,5 +1,7 @@
 # ECharts 笔记
 
+##### [Essay](https://dixinl.github.io/Essay/)
+
 ## grid 网格
 
 ### grid 中的 containLabel 属性
