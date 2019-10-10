@@ -129,7 +129,7 @@ Ajax 的核心技术是名为 XMLHttpRequest 的 API，通过 JavaScript 脚本�
 
   只要建立起 WebSocket 连接，就希望一直保持连接状态。和 HTTP 相比，不但每次连接时的总开销减少，而且由于 WebSocket 的首部信息很小，通信量也相应减少了。 
 
-JavaScript 可调用“The WebSocket API”（http://www.w3.org/TR/websockets/，由 W3C 标准制定）内提供的 WebSocket 程序接口，以实现 WebSocket 协议下全双工通信。
+JavaScript 可调用“The WebSocket API”（http://www.w3.org/TR/websockets/ ，由 W3C 标准制定）内提供的 WebSocket 程序接口，以实现 WebSocket 协议下全双工通信。
 
 ![1565740073561](images/1565740073561.png)
 
