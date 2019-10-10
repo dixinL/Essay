@@ -23,6 +23,8 @@
 
 #### 	[Docker & K8S 简述.md](https://github.com/dixinL/Essay/blob/master/Docker%26K8S%E7%AE%80%E8%BF%B0.md)
 
+####  [DockerFile 解析.md](https://github.com/dixinL/Essay/blob/master/DockerFile%20%E8%A7%A3%E6%9E%90.md)
+
 ### - 杂项
 
 #### 	[解决 Github 中页面无法预览.md](https://github.com/dixinL/Essay/blob/master/%E8%A7%A3%E5%86%B3%20Github%20%E4%B8%AD%E9%A1%B5%E9%9D%A2%E6%97%A0%E6%B3%95%E9%A2%84%E8%A7%88.md)
