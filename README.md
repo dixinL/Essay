@@ -31,8 +31,12 @@
 
 #### 	[Ubuntu 安装 Fiddler.md](https://github.com/dixinL/Essay/blob/master/Ubuntu%20%E5%AE%89%E8%A3%85%20Fiddler.md)
 
+####  [身份证校验.md](https://github.com/dixinL/Essay/blob/master/%E8%BA%AB%E4%BB%BD%E8%AF%81%E6%A0%A1%E9%AA%8C.md)
+
 ### - 前端
 
 ####  [Layui Table 组件的前端分页.md](https://github.com/dixinL/Essay/blob/master/Layui%20Table%20%E7%BB%84%E4%BB%B6%E7%9A%84%E5%89%8D%E7%AB%AF%E5%88%86%E9%A1%B5.md)
 
 ####  [CSS 权重计算规则.md](https://github.com/dixinL/Essay/blob/master/CSS%E6%9D%83%E9%87%8D%E8%AE%A1%E7%AE%97%E8%A7%84%E5%88%99.md)
+
+####  [PWA 浅析.md](https://github.com/dixinL/Essay/blob/master/PWA%20%E6%B5%85%E6%9E%90.md)
