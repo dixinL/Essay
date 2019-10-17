@@ -61,7 +61,7 @@ PWA 未来的发展不做讨论，不过在国内类似功能的产物——小�
 >   "start_url": ".",	//指定用户从设备启动应用程序时加载的 URL。 如果以相对 URL 的形式给出，则基本 URL 将是 manifest 的 URL。
 >   "display": "standalone",	//定义开发人员对 Web 应用程序的首选显示模式。
 >   "background_color": "#fff",	//为 web 应用程序预定义的背景颜色。此值在应用程序样式表中可以再次声明。它主要用于在样式表加载之前，当加载 manifest，浏览器可以用来绘制 web 应用程序的背景颜色。在启动 web 应用程序和加载应用程序的内容之间创建了一个平滑的过渡。	--注意：background_color 只是在 web 应用程序加载时提高用户体验，而当 web 应用程序的样式表可用时，不能替代作为背景颜色使用。
->   "description": "A simply readable Hacker News app.",	//提供有关Web应用程序的一般描述。
+>   "description": "A simply readable Hacker News app.",	//提供有关 Web 应用程序的一般描述。
 >   "icons": [{
 >     "src": "images/touch/homescreen48.png",	//图像文件的路径。 如果 src 是一个相对 URL，则基本 URL 将是 manifest 的 URL。
 >     "sizes": "48x48",	//包含空格分隔的图像尺寸的字符串。
@@ -99,9 +99,9 @@ PWA 未来的发展不做讨论，不过在国内类似功能的产物——小�
 
 ### 其他
 
-- **prefer_related_applications**
+- #### prefer_related_applications
 
-  - 指定一个布尔值，提示用户代理向用户指示指定的相关应用程序（请参见下文）可用，并建议通过Web应用程序。 只有当相关的本地应用程序确实提供了某些Web应用程序无法做到的事情时，才应该使用它。
+  - 指定一个布尔值，提示用户代理向用户指示指定的相关应用程序（请参见下文）可用，并建议通过 Web 应用程序。 只有当相关的本地应用程序确实提供了某些 Web 应用程序无法做到的事情时，才应该使用它。
 
     > ```json
     > "prefer_related_applications": false
@@ -109,9 +109,9 @@ PWA 未来的发展不做讨论，不过在国内类似功能的产物——小�
 
   - Note: 如果省略,默认设置为 false。
 
-- **dir**
+- #### dir
 
-  - 指定名称、短名称和描述成员的主文本方向。与lang一起配置，可以帮助正确显示右到左文本。
+  - 指定名称、短名称和描述成员的主文本方向。与 lang 一起配置，可以帮助正确显示右到左文本。
 
     > ```json
     > "dir": "rtl",
@@ -124,9 +124,9 @@ PWA 未来的发展不做讨论，不过在国内类似功能的产物——小�
     - rtl: 由右到左
     - auto: 由浏览器自动判断
 
-  * 注意：当省略时，默认为auto
+  * 注意：当省略时，默认为 auto
 
-- **display**
+- #### display
 
   - 有效值
 
@@ -139,15 +139,15 @@ PWA 未来的发展不做讨论，不过在国内类似功能的产物——小�
 
     - 注：
       	1. 在一个浏览器中，Chrome 指除了网页本身之外任何可视的部分 UI（如：工具栏、菜单栏、标签）。这不应与 Google Chrome 浏览器混淆。
-       	2. 可以使用显示模式媒体功能，根据[显示模式](https://developer.mozilla.org/docs/Web/CSS/@media/display-mode)选择性地将CSS应用到您的应用程序。 这可用于在从URL启动网站和从桌面图标启动网站之间提供一致的用户体验。
+       	2. 可以使用显示模式媒体功能，根据[显示模式](https://developer.mozilla.org/docs/Web/CSS/@media/display-mode)选择性地将 CSS 应用到您的应用程序。 这可用于在从 URL 启动网站和从桌面图标启动网站之间提供一致的用户体验。
 
     > ```json
     > "display": "standalone"
     > ```
 
-- **orientation**
+- #### orientation
 
-  - 定义所有Web应用程序顶级的默认方向 [browsing contexts](https://developer.mozilla.org/en-US/docs/Glossary/Browsing_context).
+  - 定义所有 Web 应用程序顶级的默认方向 [browsing contexts](https://developer.mozilla.org/en-US/docs/Glossary/Browsing_context).
 
   - 方向可以是以下值之一：
 
@@ -164,7 +164,7 @@ PWA 未来的发展不做讨论，不过在国内类似功能的产物——小�
     > "orientation": "portrait-primary"
     > ```
 
-- **scope**
+- #### scope
 
   - 定义此 Web 应用程序的应用程序上下文的导航范围。 这基本上限制了 manifest 可以查看的网页。 如果用户在范围之外浏览应用程序，则返回到正常的网页。
 
@@ -174,7 +174,7 @@ PWA 未来的发展不做讨论，不过在国内类似功能的产物——小�
     > "scope": "/myapp/"
     > ```
 
-- **theme_color**
+- #### theme_color
 
   - 定义应用程序的默认主题颜色。 这有时会影响操作系统显示应用程序的方式（例如，在 Android 的任务切换器上，主题颜色包围应用程序）。
 
@@ -184,7 +184,7 @@ PWA 未来的发展不做讨论，不过在国内类似功能的产物——小�
 
 ### 初始屏幕
 
-在Chrome 47及更高版本中，从主屏幕启动的Web应用程序将显示启动画面。 这个启动画面是使用Web应用程序清单中的属性自动生成的，具体来说就是：`name`，`background_color`以及`icons` 中距设备最近128dpi的图标。
+在 Chrome 47 及更高版本中，从主屏幕启动的 Web 应用程序将显示启动画面。 这个启动画面是使用 Web 应用程序清单中的属性自动生成的，具体来说就是：name，background_color 以及 icons 中距设备最近 128dpi 的图标。
 
 ### Mime类型
 
