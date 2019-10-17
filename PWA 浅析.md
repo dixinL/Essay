@@ -99,7 +99,7 @@ PWA 未来的发展不做讨论，不过在国内类似功能的产物——小�
 
 ### 其他
 
-- *prefer_related_applications*
+- **prefer_related_applications**
 
   - 指定一个布尔值，提示用户代理向用户指示指定的相关应用程序（请参见下文）可用，并建议通过Web应用程序。 只有当相关的本地应用程序确实提供了某些Web应用程序无法做到的事情时，才应该使用它。
 
@@ -109,7 +109,7 @@ PWA 未来的发展不做讨论，不过在国内类似功能的产物——小�
 
   - Note: 如果省略,默认设置为 false。
 
-- *dir*
+- **dir**
 
   - 指定名称、短名称和描述成员的主文本方向。与lang一起配置，可以帮助正确显示右到左文本。
 
@@ -126,7 +126,7 @@ PWA 未来的发展不做讨论，不过在国内类似功能的产物——小�
 
   * 注意：当省略时，默认为auto
 
-- *display*
+- **display**
 
   - 有效值
 
@@ -145,7 +145,7 @@ PWA 未来的发展不做讨论，不过在国内类似功能的产物——小�
     > "display": "standalone"
     > ```
 
-- *orientation*
+- **orientation**
 
   - 定义所有Web应用程序顶级的默认方向 [browsing contexts](https://developer.mozilla.org/en-US/docs/Glossary/Browsing_context).
 
@@ -164,7 +164,7 @@ PWA 未来的发展不做讨论，不过在国内类似功能的产物——小�
     > "orientation": "portrait-primary"
     > ```
 
-- *scope*
+- **scope**
 
   - 定义此 Web 应用程序的应用程序上下文的导航范围。 这基本上限制了 manifest 可以查看的网页。 如果用户在范围之外浏览应用程序，则返回到正常的网页。
 
@@ -174,7 +174,7 @@ PWA 未来的发展不做讨论，不过在国内类似功能的产物——小�
     > "scope": "/myapp/"
     > ```
 
-- *theme_color*
+- **theme_color**
 
   - 定义应用程序的默认主题颜色。 这有时会影响操作系统显示应用程序的方式（例如，在 Android 的任务切换器上，主题颜色包围应用程序）。
 
