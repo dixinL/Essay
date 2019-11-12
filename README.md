@@ -39,6 +39,12 @@
 
 ####  [PWA 浅析 2](https://github.com/dixinL/Essay/blob/master/PWA%20%E6%B5%85%E6%9E%90%202.md)
 
+####  [clip-path CSS 剪切属性](https://github.com/dixinL/Essay/blob/master/clip-path%20CSS%20%E5%89%AA%E5%88%87%E5%B1%9E%E6%80%A7.md)
+
+####  [filter 使用](https://github.com/dixinL/Essay/blob/master/filter%20%E4%BD%BF%E7%94%A8.md)
+
+####  [SVG 详解](https://github.com/dixinL/Essay/blob/master/SVG%20%E8%AF%A6%E8%A7%A3.md)
+
 ####  [《Web 前端黑客技术揭秘》笔记](https://github.com/dixinL/Essay/blob/master/%E3%80%8AWeb%20%E5%89%8D%E7%AB%AF%E9%BB%91%E5%AE%A2%E6%8A%80%E6%9C%AF%E6%8F%AD%E7%A7%98%E3%80%8B%E7%AC%94%E8%AE%B0.md)
 
 ### - Docker
