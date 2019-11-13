@@ -7,10 +7,16 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Filter</title>
 	<link rel="stylesheet" href="./css/main.css">
+	<!-- 引入样式 -->
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	<!-- import Vue before Element -->
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<!-- 引入组件库 -->
+	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 </head>
 
 <body>
-	<div class="contain">
+	<div id="app" class="contain">
 		<div class="box">
 			<img src="./kawasaki_ninja400.jpeg" class="img" style="-webkit-filter: none;filter: none;" />
 			<h3>正常</h3>
@@ -19,8 +25,12 @@
 			</p>
 		</div>
 		<div class="box">
-			<img src="./kawasaki_ninja400.jpeg" class="img" style="-webkit-filter: blur(2px);filter: blur(2px);" />
+			<img src="./kawasaki_ninja400.jpeg" class="img"
+				:style="{'-webkit-filter': getsty(blur,'px','blur'),'filter': getsty(blur,'px','blur')}" />
 			<h3>blur(px) 模糊</h3>
+			<div class="block">
+				<el-slider :max="a1" v-model="blur" :format-tooltip="pix"></el-slider>
+			</div>
 			<p>
 				给图像设置高斯模糊。<br />
 				"radius"一值设定高斯函数的标准差，或者是屏幕上以多少像素融在一起， 所以值越大越模糊；<br />
@@ -30,8 +40,11 @@
 		</div>
 		<div class="box">
 			<img src="./kawasaki_ninja400.jpeg" class="img"
-				style="-webkit-filter: grayscale(100%);filter: grayscale(100%);" />
+				:style="{'-webkit-filter': getsty(grayscale,'%','grayscale'),'filter': getsty(grayscale,'%','grayscale')}" />
 			<h3>grayscale(%) 灰度</h3>
+			<div class="block">
+				<el-slider :max="a3" v-model="grayscale" :format-tooltip="baifenhao"></el-slider>
+			</div>
 			<p>
 				将图像转换为灰度图像。值定义转换的比例。<br />
 				值为100%则完全转为灰度图像，值为0%图像无变化。值在0%到100%之间，则是效果的线性乘子。<br />
@@ -39,8 +52,12 @@
 			</p>
 		</div>
 		<div class="box">
-			<img src="./kawasaki_ninja400.jpeg" class="img" style="-webkit-filter: brightness(2);filter: brightness(2);" />
+			<img src="./kawasaki_ninja400.jpeg" class="img"
+				:style="{'-webkit-filter': getsty(brightness,'%','brightness'),'filter': getsty(brightness,'%','brightness')}" />
 			<h3>brightness(%) 亮度</h3>
+			<div class="block">
+				<el-slider :max="a5" v-model="brightness" :format-tooltip="baifenhao"></el-slider>
+			</div>
 			<p>
 				给图片应用一种线性乘法，使其看起来更亮或更暗。<br />
 				如果值是0%，图像会全黑。值是100%，则图像无变化。<br />
@@ -50,8 +67,12 @@
 			</p>
 		</div>
 		<div class="box">
-			<img src="./kawasaki_ninja400.jpeg" class="img" style="-webkit-filter: contrast(2);filter: contrast(2);" />
+			<img src="./kawasaki_ninja400.jpeg" class="img"
+				:style="{'-webkit-filter': getsty(contrast,'%','contrast'),'filter': getsty(contrast,'%','contrast')}" />
 			<h3>contrast(%) 对比度</h3>
+			<div class="block">
+				<el-slider :max="a5" v-model="contrast" :format-tooltip="baifenhao"></el-slider>
+			</div>
 			<p>
 				调整图像的对比度。<br />
 				值是0%的话，图像会全黑。值是100%，图像不变。<br />
@@ -60,8 +81,12 @@
 			</p>
 		</div>
 		<div class="box">
-			<img src="./kawasaki_ninja400.jpeg" class="img" style="-webkit-filter: saturate(5);filter: saturate(5);" />
+			<img src="./kawasaki_ninja400.jpeg" class="img"
+				:style="{'-webkit-filter': getsty(saturate,'%','saturate'),'filter': getsty(saturate,'%','saturate')}" />
 			<h3>saturate(%) 饱和度</h3>
+			<div class="block">
+				<el-slider :max="a5" v-model="saturate" :format-tooltip="baifenhao"></el-slider>
+			</div>
 			<p>
 				转换图像饱和度。值定义转换的比例。<br />
 				值为0%则是完全不饱和，值为100%则图像无变化。其他值，则是效果的线性乘子。<br />
@@ -71,8 +96,11 @@
 		</div>
 		<div class="box">
 			<img src="./kawasaki_ninja400.jpeg" class="img"
-				style="-webkit-filter: hue-rotate(120deg);filter: hue-rotate(120deg);" />
+				:style="{'-webkit-filter': getsty(huerotate,'deg','hue-rotate'),'filter': getsty(huerotate,'deg','hue-rotate')}" />
 			<h3>hue-rotate(deg) 色相旋转</h3>
+			<div class="block">
+				<el-slider :max="a4" v-model="huerotate" :format-tooltip="huerotates"></el-slider>
+			</div>
 			<p>
 				给图像应用色相旋转。<br />
 				"angle"一值设定图像会被调整的色环角度值。<br />
@@ -81,8 +109,12 @@
 			</p>
 		</div>
 		<div class="box">
-			<img src="./kawasaki_ninja400.jpeg" class="img" style="-webkit-filter: invert(1);filter: invert(1);" />
+			<img src="./kawasaki_ninja400.jpeg" class="img"
+				:style="{'-webkit-filter': getsty(invert,'%','invert'),'filter': getsty(invert,'%','invert')}" />
 			<h3>invert(%) 反色</h3>
+			<div class="block">
+				<el-slider :max="a3" v-model="invert" :format-tooltip="baifenhao"></el-slider>
+			</div>
 			<p>
 				反转输入图像。<br />
 				值定义转换的比例。<br />
@@ -91,8 +123,14 @@
 			</p>
 		</div>
 		<div class="box">
-			<img src="./kawasaki_ninja400.jpeg" class="img" style="-webkit-filter: drop-shadow(0px 0px 5px #000);filter: drop-shadow(0px 0px 5px #000);" />
+			<img src="./kawasaki_ninja400.jpeg" class="img"
+				:style="{'-webkit-filter': getsty2(),'filter': getsty2()}" />
 			<h3>drop-shadow(h-shadow|v-shadow|blur|spread|color) 阴影</h3>
+			<div class="block">
+				<el-slider :max="a1" v-model="dropshadow1" :format-tooltip="pix"></el-slider>
+				<el-slider :max="a1" v-model="dropshadow2" :format-tooltip="pix"></el-slider>
+				<el-slider :max="a2" v-model="dropshadow3" :format-tooltip="pix"></el-slider>
+			</div>
 			<p>
 				给图像设置一个阴影效果。<br />
 				阴影是合成在图像下面，可以有模糊度的，可以以特定颜色画出的遮罩图的偏移版本。<br />
@@ -102,27 +140,79 @@
 			</p>
 		</div>
 		<div class="box">
-			<img src="./kawasaki_ninja400.jpeg" class="img" style="-webkit-filter: opacity(50%);filter: opacity(50%);" />
+			<img src="./kawasaki_ninja400.jpeg" class="img"
+				:style="{'-webkit-filter': getsty(opacity,'%','opacity'),'filter': getsty(opacity,'%','opacity')}" />
 			<h3>opacity(%) 透明度</h3>
+			<div class="block">
+				<el-slider :max="a3" v-model="opacity" :format-tooltip="baifenhao"></el-slider>
+			</div>
 			<p>
-					转化图像的透明程度。<br/>
-					值定义转换的比例。<br/>
-					值为0%则是完全透明，值为100%则图像无变化。值在0%和100%之间，则是效果的线性乘子，也相当于图像样本乘以数量。 <br/>
-					若值未设置，值默认是1。<br/>
-					该函数与已有的opacity属性很相似，不同之处在于通过filter，一些浏览器为了提升性能会提供硬件加速。
+				转化图像的透明程度。<br />
+				值定义转换的比例。<br />
+				值为0%则是完全透明，值为100%则图像无变化。值在0%和100%之间，则是效果的线性乘子，也相当于图像样本乘以数量。 <br />
+				若值未设置，值默认是1。<br />
+				该函数与已有的opacity属性很相似，不同之处在于通过filter，一些浏览器为了提升性能会提供硬件加速。
 			</p>
 		</div>
 		<div class="box">
-				<img src="./kawasaki_ninja400.jpeg" class="img" style="-webkit-filter: sepia(1);filter: sepia(1);" />
-				<h3>sepia(%) 褐色</h3>
-				<p>
-						将图像转换为深褐色。<br/>
-						值定义转换的比例。<br/>
-						值为100%则完全是深褐色的，值为0%图像无变化。值在0%到100%之间，则是效果的线性乘子。<br/>
-						若未设置，值默认是0；
-				</p>
+			<img src="./kawasaki_ninja400.jpeg" class="img"
+				:style="{'-webkit-filter': getsty(sepia,'%','sepia'),'filter': getsty(sepia,'%','sepia')}" />
+			<h3>sepia(%) 褐色</h3>
+			<div class="block">
+				<el-slider :max="a3" v-model="sepia" :format-tooltip="baifenhao"></el-slider>
 			</div>
+			<p>
+				将图像转换为深褐色。<br />
+				值定义转换的比例。<br />
+				值为100%则完全是深褐色的，值为0%图像无变化。值在0%到100%之间，则是效果的线性乘子。<br />
+				若未设置，值默认是0；
+			</p>
+		</div>
 	</div>
 </body>
-
+<script>
+	new Vue({
+		el: '#app',
+		data: function () {
+			return {
+				blur: 2,
+				brightness: 100,
+				grayscale: 100,
+				contrast: 100,
+				saturate: 100,
+				huerotate: 100,
+				invert: 1,
+				dropshadow1: 1,
+				dropshadow2: 1,
+				dropshadow3: 5,
+				opacity: 50,
+				sepia: 100,
+				a1: 5,
+				a2: 10,
+				a3: 100,
+				a4: 360,
+				a5: 1000,
+			}
+		},
+		methods: {
+			pix(val) {
+				this.blurpx = val + "px";
+				return this.blurpx
+			},
+			baifenhao(val) {
+				return val + "%"
+			},
+			huerotates(val) {
+				return val + "deg"
+			},
+			getsty(val, amount, type) {
+				console.log(val)
+				return type + "(" + val + amount + ")"
+			},
+			getsty2() {
+				return 'drop-shadow('+ this.dropshadow1 +'px '+ this.dropshadow2 +'px '+ this.dropshadow3 +'px #000)'
+			}
+		},
+	})
+</script>
 </html>

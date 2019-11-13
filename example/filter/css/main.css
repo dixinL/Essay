@@ -18,7 +18,7 @@ body {
     font-size: 16px;
     font-weight: 400;
     line-height: 26px;
-    margin: 10px 0;
+    margin: 10px 0 0 0;
     text-align: center;
 }
 .box p {
@@ -32,4 +32,7 @@ body {
     margin: 0 auto;
     width: 200px;
     height: 200px;
+}
+.block {
+    padding: 0 20px;
 }
