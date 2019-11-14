@@ -23,7 +23,7 @@
           </div>
           <div class="right">
                <div class="content">
-                    <div class="con-ggh" v-for="(item,index) in group" :key="index">
+                    <div class="con-ggh" v-for="(item,index) in list" :key="index">
                          <div class="zcinfo fl">
                               <a v-for="(items,index) in item" :href="items.link" class="ck-m bs tc dp">{{item.title}}</a>
                          </div>
@@ -71,6 +71,7 @@
                               .then(function (response) {
                                    this.group = response.data.group;
                                    this.list = response.data.essay;
+                                   console.log(this.group)
                                    console.log(this.list)
                               })
                               .catch(function (error) {
