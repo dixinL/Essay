@@ -70,6 +70,8 @@
                          let url = "./list.json";
                          axios.get(url)
                               .then(function (response) {
+                                   this.group = [];
+                                   this.list = [];
                                    this.group = response.data.group;
                                    this.list = response.data.essay;
                                    console.log(this.group)
