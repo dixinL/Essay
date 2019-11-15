@@ -1,27 +1,176 @@
-body{background:url(images/65.jpg) no-repeat fixed center center;}
-form,ul,li,ol,dl,dt,dd,p,i,h1,h2,h3,h4,h5,h6{ margin:0; padding:0}
-ul,li{ list-style:none}  img{ border:0}  .dp{ display:block}
-.tc{ text-align:center}  .fl{ float:left} .fr{ float:right}
-.clear{clear:both;}   .clearfix:after{content:"."; display:block; visibility:hidden; height:0; clear:both}
-.main-page{margin:0 auto;width:1200px}
-.main-page .left{ padding-right: 25px; border-right: 1px #fff solid; margin-top:10vh}
-.main-page .left, .main-page .right{float:left;}
-.main-page .nav-back{height:300px;}
-.main-page .nav{position:relative;margin-top:-300px;width:132px;text-align:center;font-size:18px;font-family:"微软雅黑";color:#fff;}
-.main-page .nav div{height:47px;line-height:47px; margin-bottom: 8px; border-radius: 2px; cursor: pointer;}
-.main-page .nav div.on{background:#3091f2; }
-.main-page .right{width:987px;height:80vh;margin-left:55px;margin-top: 10vh;}
-.main-page .content{position:relative; width:987px; height:80vh; overflow:hidden;}
-.main-page .content .con-ggh{ width:987px; height:80vh;overflow: auto;}
+body {
+  background: url(images/65.jpg) no-repeat fixed center center;
+}
 
-.con-ggh ul{ padding-top:20px; display:block} 
-.con-ggh ul li{ padding-top:20px; margin-right:20px; float:left}
-.list-pic{ background-color: rgba(255,255,255,0.3); padding: 19px; width: 110px; height: 110px; border: 1px solid #b9babe;}
-.list-pic img{ width:110px; height:110px; display:block}
-.con-ggh .item-name{ padding:20px 0; height: 20px; width: 150px; font-size: 16px; text-align: center; color: #fff; line-height: 20px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
-.b-intro{ margin-top:20px}
-.b-intro span{ font-size:24px; margin-bottom:12px; color:#fff}
-.b-intro p{ width:545px; height:45px; line-height:24px; overflow:hidden; color:#fff; font-size:14px}
-.ck-m{ width:123px; height:36px; line-height:36px; border:1px #fff solid; margin-top:25px}
-.ptpic-dl,.ptpic-dl img{ width:354px; height:690px}
-.ptpic-dl{ margin-top:110px}
+form,
+li,
+ol,
+dl,
+dt,
+dd,
+p,
+i,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0
+}
+
+.fl {
+  float: left
+}
+
+.fr {
+  float: right
+}
+
+.clear {
+  clear: both;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both
+}
+
+.main-page {
+  margin: 0 auto;
+  width: 90vw;
+}
+
+.main-page .left {
+  padding-right: 25px;
+  border-right: 1px #fff solid;
+}
+
+.main-page .left {
+  float: left;
+}
+
+.main-page .nav-back {
+  height: 300px;
+}
+
+.main-page .nav {
+  position: relative;
+  margin-top: -300px;
+  width: 132px;
+  text-align: center;
+  font-size: 18px;
+  font-family: "微软雅黑";
+  color: #fff;
+}
+
+.main-page .nav div {
+  height: 47px;
+  line-height: 47px;
+  margin-bottom: 30px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.main-page .nav div.on {
+  background: #3091f2;
+}
+
+.main-page .right {
+  height: 80vh;
+  margin-left: 157px;
+  margin-top: 10vh;
+}
+
+.main-page .content {
+  position: relative;
+  margin-left: 55px;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.main-page .content .con-ggh {
+  width: 100%;
+  height: 80vh;
+  overflow: auto;
+}
+
+.list-pic {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 19px;
+  width: 110px;
+  height: 110px;
+  border: 1px solid #b9babe;
+}
+
+.list-pic img {
+  width: 110px;
+  height: 110px;
+  display: block
+}
+
+.con-ggh .item-name {
+  padding: 20px 0;
+  height: 20px;
+  width: 150px;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.b-intro {
+  margin-top: 20px
+}
+
+.b-intro span {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #fff
+}
+
+.b-intro p {
+  width: 545px;
+  height: 45px;
+  line-height: 24px;
+  overflow: hidden;
+  color: #fff;
+  font-size: 14px
+}
+
+.ck-m {
+  padding: 10px 30px;
+  line-height: 36px;
+  border: 1px #fff solid;
+  margin-top: 25px;
+  margin-right: 34px;
+  text-decoration: none;
+  color: #ddd;
+  display: inline-block;
+  text-align: center;
+}
+
+.ptpic-dl,
+.ptpic-dl img {
+  width: 354px;
+  height: 690px
+}
+
+.ptpic-dl {
+  margin-top: 110px
+}
+
+.contain {
+
+}
+
+[v-cloak] {
+  display: none;
+}

@@ -8,24 +8,24 @@
 
      <link rel="stylesheet" href="./style.css">
      </link>
-
 </head>
 
 <body>
-     <script src="/demos/googlegg.js"></script>
-
-     <div id="app" class="main-page">
+     <div id="app" class="main-page" v-cloak>
           <div class="left">
                <div class="nav-back"></div>
                <div class="nav">
-                    <div v-for="(item,index) in group" :key="index">{{item}}</div>
+                    <div v-for="(item,index) in group" :key="index" @click="onclickbtn(index)">{{item}}</div>
                </div>
           </div>
           <div class="right">
                <div class="content">
                     <div class="con-ggh" v-for="(item,index) in list" :key="index">
                          <div class="zcinfo fl">
-                              <a v-for="(items,index) in item" :href="items.link" class="ck-m bs tc dp">{{items.title}}</a>
+                              <div class="contain">
+                                   <a v-for="(items,index) in item" :href="'https://github.com/dixinL/Essay/blob/master'+items.link" style="padding: 0 10px"
+                                        class="ck-m">{{items.title}}</a>
+                              </div>
                          </div>
                     </div>
                </div>
@@ -36,22 +36,6 @@
      <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
      <script src="https://unpkg.com/vue/dist/vue.js"></script>
      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-     <script type="text/javascript">
-          $(".main-page .nav div").mouseenter(function () {
-               var $this = $(this);
-               var index = $this.index();
-          }).mouseleave(function () {
-               var $this = $(this);
-               var index = $this.index();
-          }).click(function () {
-               var $this = $(this);
-               var index = $this.index();
-               var l = -(index * 80);
-               $(".main-page .nav div").removeClass("on");
-               $(".main-page .nav div").eq(index).addClass("on");
-               $(".main-page .content .con-ggh:eq(0)").stop().animate({ "margin-top": l + "vh" }, 500);
-          });
-     </script>
      <script>
           new Vue({
                el: '#app',
@@ -64,20 +48,32 @@
                mounted: function () {
                     this.init();
                },
+               watch: {
+                    group: function () {
+                         this.$nextTick(function () {
+                              /*现在数据已经渲染完毕*/
+                              $(".main-page .nav div").eq(0).addClass("on");
+                         })
+                    }
+               },
                methods: {
                     init() {
                          let url = "./list.json";
-                         let self= this;
+                         let self = this;
                          axios.get(url)
                               .then(function (response) {
-                                   self.group = [];
-                                   self.list = [];
                                    self.group = response.data.group;
                                    self.list = response.data.essay;
                               })
                               .catch(function (error) {
                                    console.log(response);
                               })
+                    },
+                    onclickbtn(index) {
+                         var l = -(index * 80);
+                         $(".main-page .nav div").removeClass("on");
+                         $(".main-page .nav div").eq(index).addClass("on");
+                         $(".main-page .content .con-ggh:eq(0)").stop().animate({ "margin-top": l + "vh" }, 500);
                     }
                }
           })
