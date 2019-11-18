@@ -6,7 +6,7 @@
      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
      <title>Essay</title>
 
-     <link rel="stylesheet" href="./style.css">
+     <link rel="stylesheet" href="./static/css/style.css">
      </link>
 </head>
 
@@ -33,7 +33,7 @@
           <div class="clear"></div>
      </div>
 
-     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+     <script type="text/javascript" src="./static/js/jquery-1.11.1.min.js"></script>
      <script src="https://unpkg.com/vue/dist/vue.js"></script>
      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
      <script>
@@ -58,7 +58,7 @@
                },
                methods: {
                     init() {
-                         let url = "./list.json";
+                         let url = "./static/json/list.json";
                          let self = this;
                          axios.get(url)
                               .then(function (response) {
