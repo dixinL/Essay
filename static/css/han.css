@@ -1,19 +1,10 @@
 @charset "utf-8";
 
-:root {
-  --active-file-bg-color: #dadada;
-  --active-file-bg-color: rgba(32, 43, 51, 0.63);
-  --active-file-text-color: white;
-  --bg-color: #fff;
-  --text-color: #333;
-  --side-bar-bg-color: #f5f5f5;
-  --control-text-color: #666;
-}
 
 /* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
 html {
-  color: #333;
-  background: #fff;
+  color: #222;
+  background: #eee;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-rendering: optimizelegibility;
@@ -139,7 +130,7 @@ audio, canvas, video {
 
 /* 要注意表单元素并不继承父级 font 的问题 */
 body, button, input, select, textarea {
-  font: 300 1em/1.8 "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
+  font: 300 1.3em/1.8 "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
 }
 
 body {
@@ -150,11 +141,11 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "TimesNewRomanPS-ItalicMT", "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
   /*font-family: "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;*/
   -webkit-font-smoothing: initial;
-  font-weight: 100;
+  font-weight: 300;
   color: var(--text-color);
   line-height: 1.35; 
   font-variant-numeric: lining-nums;
-  margin-bottom: 1em;
+  margin: 0.6em 0.4rem;
 }
 
 em {
@@ -180,7 +171,10 @@ table {
 
 /* 去除默认边框 */
 fieldset, img {
+  display: block;
   border: 0;
+  width: 90%;
+  margin: 0 auto;
 }
 
 /* 块/段落引用 */
