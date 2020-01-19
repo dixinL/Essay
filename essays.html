@@ -19,11 +19,11 @@
 
   <script>
     var htmlMD = "sss";
-    axios.get('./Transfolw.js picture-train.md').then((response) => {　　　　　　
-　　　　　　htmlMD = response.data;
-　　　　});
-    document.getElementById('content').innerHTML =
-      marked(htmlMD);
+    axios.get('./Transfolw.js picture-train.md').then((response) => {
+      document.getElementById('content').innerHTML =
+        marked(response.data);
+    });
+
   </script>
 </body>
 
