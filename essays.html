@@ -5,6 +5,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Essay</title>
+  <link rel="stylesheet" href="./static/css/md.css">
   <link rel="icon" href="./static/favicon.ico" type="image/x-icon">
   </link>
 </head>
@@ -18,8 +19,9 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
   <script>
-    var htmlMD = "sss";
-    axios.get('./Transfolw.js picture-train.md').then((response) => {
+    var htmlUrl = window.location.href;
+    var htmlMD = htmlUrl.split("?md=")[1];
+    axios.get('./' + htmlMD).then((response) => {
       document.getElementById('content').innerHTML =
         marked(response.data);
     });
