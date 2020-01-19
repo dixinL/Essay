@@ -60,21 +60,21 @@ SVG 文件可通过以下标签嵌入 HTML 文档：embed、object 或者 iframe
 
 | 标签   | 目前情况                                                     |
 | ------ | ------------------------------------------------------------ |
-| embed  | 如果需要创建合法的 XHTML，就不能使用 <embed>。任何 HTML 规范中都没有 <embed> 标签 |
-| object | 最新版本中，<object> 的可兼容性并不好                        |
-| iframe | <iframe> 标签可工作在大部分的浏览器中。                      |
+| embed  | 如果需要创建合法的 XHTML，就不能使用 embed。任何 HTML 规范中都没有 embed 标签 |
+| object | 最新版本中，object 的可兼容性并不好                        |
+| iframe | iframe 标签可工作在大部分的浏览器中。                      |
 
 ### 基本图形
 
 SVG 有一些预定义的形状元素，可被开发者使用和操作：
 
-- 矩形 <rect>
-- 圆形 <circle>
-- 椭圆 <ellipse>
-- 线 <line>
-- 折线 <polyline>
-- 多边形 <polygon>
-- 路径 <path>
+- 矩形 rect
+- 圆形 circle
+- 椭圆 ellipse
+- 线 line
+- 折线 polyline
+- 多边形 polygon
+- 路径 path
 
 #### rect 矩形
 
@@ -106,13 +106,13 @@ SVG 有一些预定义的形状元素，可被开发者使用和操作：
 
 #### polyline 折线
 
-<polyline> 标签用来创建仅包含直线的形状。
+polyline 标签用来创建仅包含直线的形状。
 
 - points 属性定义多边形每个角的 x 和 y 坐标
 
 ####  polygon 多边形
 
-<polygon> 标签用来创建含有不少于三个边的图形。
+polygon 标签用来创建含有不少于三个边的图形。
 
 - points 属性定义多边形每个角的 x 和 y 坐标
 
@@ -145,7 +145,7 @@ SVG 有一些预定义的形状元素，可被开发者使用和操作：
 
 ##### 滤镜
 
-SVG 滤镜用来向形状和文本添加特殊的效果，必须在 **<defs>** 标签中定义 SVG 滤镜。可用的滤镜有：
+SVG 滤镜用来向形状和文本添加特殊的效果，必须在 **defs** 标签中定义 SVG 滤镜。可用的滤镜有：
 
 在 SVG 中，可用的滤镜有：
 
@@ -171,19 +171,19 @@ SVG 滤镜用来向形状和文本添加特殊的效果，必须在 **<defs>** �
 
 ##### Gaussian Blur 高斯模糊
 
-<filter> 标签用来定义 SVG 滤镜。<filter> 标签使用必需的 id 属性来定义向图形应用哪个滤镜
+filter 标签用来定义 SVG 滤镜。filter 标签使用必需的 id 属性来定义向图形应用哪个滤镜
 
 - id 属性可为滤镜定义一个唯一的名称（同一滤镜可被文档中的多个元素使用）
 - filter:url 属性用来把元素链接到滤镜。当链接滤镜 id 时，必须使用 # 字符
-- 滤镜效果是通过 <feGaussianBlur> 标签进行定义的。fe 后缀可用于所有的滤镜
-- <feGaussianBlur> 标签的 stdDeviation 属性可定义模糊的程度
+- 滤镜效果是通过 feGaussianBlur 标签进行定义的。fe 后缀可用于所有的滤镜
+- feGaussianBlur 标签的 stdDeviation 属性可定义模糊的程度
 - in="SourceGraphic" 这个部分定义了由整个图像创建效果
 
 #### SVG 渐变
 
 渐变是一种从一种颜色到另一种颜色的平滑过渡。可以把多个颜色的过渡应用到同一个元素上。
 
-SVG 渐变必须在 **<defs>** 标签中进行定义。
+SVG 渐变必须在 **defs** 标签中进行定义。
 
 在 SVG 中，有两种主要的渐变类型：
 
@@ -194,7 +194,7 @@ SVG 渐变必须在 **<defs>** 标签中进行定义。
 
 线性渐变可被定义为水平、垂直或角形的渐变：
 
-<linearGradient> 标签的 x1、x2、y1、y2 属性可定义渐变的开始和结束位置
+linearGradient 标签的 x1、x2、y1、y2 属性可定义渐变的开始和结束位置
 
 - 当 y1 和 y2 相等，而 x1 和 x2 不同时，可创建水平渐变
 - 当 x1 和 x2 相等，而 y1 和 y2 不同时，可创建垂直渐变
@@ -202,14 +202,14 @@ SVG 渐变必须在 **<defs>** 标签中进行定义。
 
 - id 属性可为渐变定义一个唯一的名称
 - fill:url(#orange_red) 属性把 ellipse 元素链接到此渐变
-- 渐变的颜色范围可由两种或多种颜色组成。每种颜色通过一个 <stop> 标签来规定。offset 属性用来定义渐变的开始和结束位置。
+- 渐变的颜色范围可由两种或多种颜色组成。每种颜色通过一个 stop 标签来规定。offset 属性用来定义渐变的开始和结束位置。
 
 ##### radialGradient 放射渐变
 
 - id 属性可为渐变定义一个唯一的名称
 - fill:url(#grey_blue) 属性把 ellipse 元素链接到此渐变
 - cx、cy 和 r 属性定义外圈，而 fx 和 fy 定义内圈
-- 渐变的颜色范围可由两种或多种颜色组成。每种颜色通过一个 <stop> 标签来规定。offset 属性用来定义渐变的开始和结束位置。
+- 渐变的颜色范围可由两种或多种颜色组成。每种颜色通过一个 stop 标签来规定。offset 属性用来定义渐变的开始和结束位置。
 
 ### [ SVG 实例 ](https://www.w3school.com.cn/svg/svg_examples.asp)
 

@@ -13,7 +13,7 @@ html {
   -webkit-font-smoothing: initial;
 }
 
-#text {
+code {
   display: block;
   width: 100%;
 }
