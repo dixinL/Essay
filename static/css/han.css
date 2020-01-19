@@ -13,9 +13,9 @@ html {
   -webkit-font-smoothing: initial;
 }
 
-code {
-  display: block;
+blockquote {
   width: 100%;
+  overflow: auto;
 }
 
 #write {
