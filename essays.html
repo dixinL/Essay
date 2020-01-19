@@ -4,13 +4,13 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Essay</title>
-  <link rel="stylesheet" href="./static/css/md.css">
+  <link rel="stylesheet" href="./static/css/han.css">
   <link rel="icon" href="./static/favicon.ico" type="image/x-icon">
   </link>
 </head>
 
 <body>
+  <div class="but_div"><button onclick="changeZT()">切换主题</button></div>
   <div id="content" class="ess_in">
 
   </div>
@@ -21,18 +21,36 @@
   <script>
     var htmlUrl = window.location.href;
     var htmlMD = htmlUrl.split("?md=")[1];
-    axios.get('./' + htmlMD).then((response) => {
+    if (htmlMD != "") {
+      axios.get('./' + htmlMD).then((response) => {
+        document.getElementById('content').innerHTML =
+          marked(response.data);
+      });
+    } else {
       document.getElementById('content').innerHTML =
-        marked(response.data);
-    });
+        marked("***Hello World,I am Dixin.L***");
+    }
+    function changeZT() {
+      var sheet = document.styleSheets[0];
+      if (sheet.href == "./static/css/han.css") {
+        sheet.href = "./static/css/night.css";
+      } else if (sheet.href == "./static/css/night.css") {
+        sheet.href = "./static/css/han.css";
+      }
 
+    }
   </script>
 </body>
 
 </html>
 <style>
-  .ess_in {
-    width: 100%;
-    height: 100%;
+  .but_div {
+    position: relative;
+  }
+
+  .but_div button {
+    position: absolute;
+    right: 50px;
+    margin: 20px;
   }
 </style>
