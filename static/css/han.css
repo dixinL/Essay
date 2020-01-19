@@ -110,12 +110,15 @@ fieldset, img {
 
 /* 块/段落引用 */
 blockquote {
-  width: 100%;
+  width: calc(100% - 1rem);
   color: #999;
   font-weight: 400;
-  border-left: 1px solid #1abc9c;
+  border-left: 3px solid #10d673;
+  border-left: 1px solid #10d673;
+  border-left: 1px solid #10d673;
+  border-left: 1px solid #10d673;
   margin: 0.2rem 0;
-  padding: 0.2rem 0 0.2rem 0.8rem;
+  padding: 0.2rem 0 0.2rem 1rem;
   overflow: auto;
 }
 
@@ -362,7 +365,7 @@ a.md-toc-inner {
 *.in-text-selection, ::selection {
     background: var(--active-file-bg-color);
     text-shadow: none;
-    color: white;
+    color: #e73636;
 }
 
 .btn-primary {
