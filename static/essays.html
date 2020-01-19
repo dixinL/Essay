@@ -1,0 +1,36 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Essay</title>
+  <link rel="icon" href="./static/favicon.ico" type="image/x-icon">
+  </link>
+</head>
+
+<body>
+  <div id="content" class="ess_in">
+
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <script>
+    var htmlMD = "sss";
+    axios.get('./Transfolw.js picture-train.md').then((response) => {　　　　　　
+　　　　　　htmlMD = response.data;
+　　　　});
+    document.getElementById('content').innerHTML =
+      marked(htmlMD);
+  </script>
+</body>
+
+</html>
+<style>
+  .ess_in {
+    width: 100%;
+    height: 100%;
+  }
+</style>
