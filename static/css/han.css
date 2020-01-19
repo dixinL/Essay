@@ -123,7 +123,7 @@ blockquote {
 }
 
 pre {
-  padding: 0.6rem 0;
+  margin: 0.6rem 0;
 }
 
 /* Firefox 以外，元素没有下划线，需添加 */
