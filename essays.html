@@ -10,7 +10,6 @@
 </head>
 
 <body>
-  <div class="but_div"><button onclick="changeZT()">切换主题</button></div>
   <div id="content" class="ess_in">
 
   </div>
@@ -30,27 +29,15 @@
       document.getElementById('content').innerHTML =
         marked("***Hello World,I am Dixin.L***");
     }
-    function changeZT() {
-      var sheet = document.styleSheets[0];
-      if (sheet.href == "./static/css/han.css") {
-        sheet.href = "./static/css/night.css";
-      } else if (sheet.href == "./static/css/night.css") {
-        sheet.href = "./static/css/han.css";
-      }
-
-    }
   </script>
 </body>
 
 </html>
 <style>
-  .but_div {
-    position: relative;
-  }
-
-  .but_div button {
-    position: absolute;
-    right: 50px;
-    margin: 20px;
+  .ess_in {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
   }
 </style>
