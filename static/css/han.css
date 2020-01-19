@@ -13,6 +13,11 @@ html {
   -webkit-font-smoothing: initial;
 }
 
+#text {
+  display: block;
+  width: 100%;
+}
+
 #write {
   max-width: 960px;
   padding-top: 2em;
