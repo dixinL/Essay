@@ -113,15 +113,18 @@ blockquote {
   width: calc(100% - 1rem);
   color: #999;
   font-weight: 400;
+  border-top: 1px solid #10d673;
+  border-right: 1px solid #10d673;
+  border-bottom: 1px solid #10d673;
   border-left: 3px solid #10d673;
-  border-left: 1px solid #10d673;
-  border-left: 1px solid #10d673;
-  border-left: 1px solid #10d673;
   margin: 0.2rem 0;
   padding: 0.2rem 0 0.2rem 1rem;
   overflow: auto;
 }
 
+pre {
+  padding: 0.6rem 0;
+}
 
 /* Firefox 以外，元素没有下划线，需添加 */
 acronym, abbr {
