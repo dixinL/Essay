@@ -44,9 +44,13 @@ html.borderbox *, html.borderbox *:before, html.borderbox *:after {
 }
 
 /* 内外边距通常让各个浏览器样式的表现位置不同 */
-body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+body, dl, dt, dd, h1, h2, h3, h4, h5, h6, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, menu, nav, section {
   margin: 0.2rem 0;
   padding: 0;
+}
+ul, ol, li {
+  margin: 0.2rem 0;
+  padding: 0 1rem;
 }
 
 /* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
@@ -107,20 +111,18 @@ thead th,
 tbody td {
   padding:8px;
   height: 19px;
-  line-height: 19px;
-  font-weight: 400;
 }
 thead th {
   text-align: left;
   color:#fff;
-  background-color: #353535;
+  background-color: #B4EEB4;
 }
 tbody tr {
   background-color: #fefefe;
   color: #686868;
 }
 tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #F0FFFF;
 }
 
 /* 复选框的列宽 */
