@@ -94,10 +94,38 @@ input::-moz-focus-inner {
   border: 0;
 }
 
-/* 去掉各Table cell 的边距并让其边重合 */
 table {
+  width: 100%;
   border-collapse: collapse;
-  border-spacing: 0;
+}
+caption {
+  height: 30px;
+  line-height: 30px;
+  font-weight: 700;
+}
+thead th,
+tbody td {
+  padding:8px;
+  height: 19px;
+  line-height: 19px;
+  font-weight: 400;
+}
+thead th {
+  text-align: left;
+  color:#fff;
+  background-color: #353535;
+}
+tbody tr {
+  background-color: #fefefe;
+  color: #686868;
+}
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* 复选框的列宽 */
+.row-selected {
+  width: 15px;
 }
 
 /* 去除默认边框 */
