@@ -1,6 +1,3 @@
-@import "night/mermaid.dark.css";
-@import "night/codeblock.dark.css";
-@import "night/sourcemode.dark.css";
 
 :root {
     --bg-color:  #363B40;
@@ -47,7 +44,6 @@ body {
 
 html,
 body,
-button,
 input,
 select,
 textarea,
@@ -67,7 +63,6 @@ div.code-tooltip,
 
 html,
 body,
-button,
 input,
 select,
 textarea {

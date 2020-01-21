@@ -4,12 +4,17 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <link rel="stylesheet" href="./static/css/han.css">
+  <link rel="stylesheet" href="./static/css/buttons.css" />
+  <link id="changelink" rel="stylesheet" href="./static/css/han.css" rel="external nofollow" />
   <link rel="icon" href="./static/favicon.ico" type="image/x-icon">
   </link>
 </head>
 
 <body>
+  <div class="but_in">
+    <a href="javascript:void(0);" id="han" onclick="changetheme('han')" class="button button-3d button-primary button-rounded">Han主题</a>
+    <a href="javascript:void(0);" id="night" onclick="changetheme('night')" class="button button-3d button-primary button-rounded">Night主题</a>
+  </div>
   <div id="content" class="ess_in">
 
   </div>
@@ -20,7 +25,7 @@
   <script>
     var htmlUrl = window.location.href;
     var htmlMD = htmlUrl.split("?md=")[1];
-    if (htmlMD != "") {
+    if (htmlMD != undefined) {
       axios.get('./' + htmlMD).then((response) => {
         document.getElementById('content').innerHTML =
           marked(response.data);
@@ -28,6 +33,54 @@
     } else {
       document.getElementById('content').innerHTML =
         marked("***Hello World,I am Dixin.L***");
+    }
+
+    var csslink = document.getElementById("changelink");
+    //初始化主题
+    loadtheme();
+    function changetheme(color) {
+      csslink.href = "./static/css/" + color + ".css";
+      //保存主题到cookies
+      document.cookie = "theme=" + color;
+      loadtheme();
+    }
+    function loadtheme() {
+      //从cookies读取主题
+      console.log(document.cookie)
+      var themevalue = getCookie("theme");
+      console.log(themevalue)
+      if (themevalue == undefined) {
+        csslink.href = "./static/css/han.css";
+        document.getElementById("night").style.display = "inline-block";
+        document.getElementById("han").style.display = "none";
+      } else if (themevalue == "night") {
+        csslink.href = "./static/css/" + themevalue + ".css";
+        document.getElementById("han").style.display = "inline-block";
+        document.getElementById("night").style.display = "none";
+      } else if (themevalue == "han") {
+        csslink.href = "./static/css/" + themevalue + ".css";
+        document.getElementById("night").style.display = "inline-block";
+        document.getElementById("han").style.display = "none";
+      }
+    }
+    function getCookie(cookie_name) {
+      var allcookies = document.cookie;
+      //索引长度，开始索引的位置
+      var cookie_pos = allcookies.indexOf(cookie_name);
+      // 如果找到了索引，就代表cookie存在,否则不存在
+      if (cookie_pos != -1) {
+        // 把cookie_pos放在值的开始，只要给值加1即可
+        //计算取cookie值得开始索引，加的1为“=”
+        cookie_pos = cookie_pos + cookie_name.length + 1;
+        //计算取cookie值得结束索引
+        var cookie_end = allcookies.indexOf(";", cookie_pos);
+        if (cookie_end == -1) {
+          cookie_end = allcookies.length;
+        }
+        //得到想要的cookie的值
+        var value = unescape(allcookies.substring(cookie_pos, cookie_end));
+      }
+      return value;
     }
   </script>
 </body>
@@ -39,5 +92,9 @@
     max-width: 1000px;
     margin: 0 auto;
     padding: 30px;
+  }
+
+  .but_in {
+    height: 60px;
   }
 </style>

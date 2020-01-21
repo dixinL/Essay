@@ -44,7 +44,7 @@ html.borderbox *, html.borderbox *:before, html.borderbox *:after {
 }
 
 /* 内外边距通常让各个浏览器样式的表现位置不同 */
-body, dl, dt, dd, h1, h2, h3, h4, h5, h6, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+body, dl, dt, dd, h1, h2, h3, h4, h5, h6, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, article, aside, details, figcaption, figure, footer, header, menu, nav, section {
   margin: 0.2rem 0;
   padding: 0;
   word-wrap:break-word;
@@ -66,7 +66,7 @@ audio, canvas, video {
 }
 
 /* 要注意表单元素并不继承父级 font 的问题 */
-body, button, input, select, textarea {
+body, input, select, textarea {
   font: 300 1.3em/1.8 "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
 }
 
@@ -94,7 +94,6 @@ em strong {
   font-family: Georgia-BoldItalic, STSongti-SC-Regular, serif;
 }
 
-button::-moz-focus-inner,
 input::-moz-focus-inner {
   padding: 0;
   border: 0;
