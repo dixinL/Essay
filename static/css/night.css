@@ -403,9 +403,9 @@ a.md-toc-inner {
 }
 
 *.in-text-selection, ::selection {
-    background: #FFF69F;
+    background: #D1D1D1;
     text-shadow: none;
-    color: #e73636;
+    color: #FFFF00;
 }
 
 .btn-primary {
