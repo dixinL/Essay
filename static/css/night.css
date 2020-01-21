@@ -142,7 +142,8 @@ fieldset, img {
 /* 块/段落引用 */
 blockquote {
   width: calc(100% - 1rem);
-  color: #999;
+  color: #EEE8CD;
+  background: #2F4F4F;
   font-weight: 400;
   border-top: 1px solid #10d673;
   border-right: 1px solid #10d673;
@@ -337,7 +338,7 @@ html {
 #write table th, #write table td {
   border: 1px solid #ddd;
   padding: 0.5em 1em;
-  color: #666;
+  color: #E0FFFF;
 }
 
 #write table .md-table-edit th {
@@ -347,11 +348,11 @@ html {
 }
 
 #write table th, #write-table th {
-  background: #fbfbfb;
+  background: #5B5B5B;
 }
 
 #write table thead th, #write-table thead th {
-  background: #f1f1f1;
+  background: #848484;
 }
 
 #write table caption {

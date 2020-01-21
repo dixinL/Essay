@@ -143,6 +143,7 @@ fieldset, img {
 blockquote {
   width: calc(100% - 1rem);
   color: #999;
+  background: #F0FFF0;
   font-weight: 400;
   border-top: 1px solid #10d673;
   border-right: 1px solid #10d673;
