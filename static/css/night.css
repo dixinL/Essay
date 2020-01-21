@@ -1,912 +1,472 @@
+@charset "utf-8";
 
-:root {
-    --bg-color:  #363B40;
-    --side-bar-bg-color: #2E3033;
-    --text-color: #b8bfc6;
 
-    --select-text-bg-color:#4a89dc;
-
-    --item-hover-bg-color: #0a0d16;
-    --control-text-color: #b7b7b7;
-    --control-text-hover-color: #eee;
-    --window-border: 1px solid #555;
-
-    --active-file-bg-color: rgb(34, 34, 34);
-    --active-file-border-color: #8d8df0;
-
-    --primary-color: #a3d5fe;
-
-    --active-file-text-color: white;
-    --item-hover-bg-color: #70717d;
-    --item-hover-text-color: white;
-    --primary-color: #6dc1e7;
-
-    --rawblock-edit-panel-bd: #333;
-}
-
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
 html {
-    font-size: 16px;
-}
-
-html,
-body {
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    background: #363B40;
-    background: var(--bg-color);
-    fill: currentColor;
-    line-height: 1.625rem;
+  color: #222;
+  background: #e1FFe1;
+  padding: 0;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  font-size: 14px;
+  -webkit-font-smoothing: initial;
 }
 
 #write {
-    max-width: 914px;
+  max-width: 960px;
+  padding-top: 2em;
+  padding-left: 60px;
+  padding-right: 60px;
+  min-height: calc(100vh - 6em);
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
 }
 
-html,
-body,
-input,
-select,
-textarea,
-div.code-tooltip-content {
-    color: #b8bfc6;
-    border-color: transparent;
+.typora-node #write {
+  min-height: calc(100% - 6em);
 }
 
-div.code-tooltip,
-.md-hover-tip .md-arrow:after {
-    background: #333;
+pre.md-meta-block {
+  background: #f5f5f5;
+  padding: 1em;
+  border-radius: 3px;
+  font-size: 14px;
 }
 
-.popover.bottom > .arrow:after {
-    border-bottom-color: #333;
+
+
+/* 如果你的项目仅支持 IE9+ | Chrome | Firefox 等，推荐在 <html> 中添加 .borderbox 这个 class */
+html.borderbox *, html.borderbox *:before, html.borderbox *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html,
-body,
-input,
-select,
-textarea {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body, dl, dt, dd, h1, h2, h3, h4, h5, h6, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+  margin: 0.2rem 0;
+  padding: 0;
+  word-wrap:break-word;
+}
+ul, ol, li {
+  margin: 0.2rem 0;
+  padding: 0 1rem;
+  word-wrap:break-word;
 }
 
-hr {
-    height: 2px;
-    border: 0;
-    margin: 24px 0 !important;
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+  display: block;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: "Lucida Grande", "Corbel", sans-serif;
-    font-weight: normal;
-    clear: both;
-    -ms-word-wrap: break-word;
-    word-wrap: break-word;
-    margin: 0;
-    padding: 0;
-    color: #DEDEDE
+/* HTML5 媒体文件跟 img 保持一致 */
+audio, canvas, video {
+  display: inline-block;
 }
 
-h1 {
-    font-size: 2.5rem;
-    /* 36px */
-    line-height: 2.75rem;
-    /* 40px */
-    margin-bottom: 1.5rem;
-    /* 24px */
-    letter-spacing: -1.5px;
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, input, select, textarea {
+  font: 300 1.3em/1.8 "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
 }
 
-h2 {
-    font-size: 1.63rem;
-    /* 24px */
-    line-height: 1.875rem;
-    /* 30px */
-    margin-bottom: 1.5rem;
-    /* 24px */
-    letter-spacing: -1px;
-    font-weight: bold;
+body {
+  font-family: "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
 }
 
-h3 {
-    font-size: 1.17rem;
-    /* 18px */
-    line-height: 1.5rem;
-    /* 24px */
-    margin-bottom: 1.5rem;
-    /* 24px */
-    letter-spacing: -1px;
-    font-weight: bold;
+h1, h2, h3, h4, h5, h6 {
+  font-family: "TimesNewRomanPS-ItalicMT", "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
+  /*font-family: "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;*/
+  -webkit-font-smoothing: initial;
+  font-weight: 400;
+  color: #FF7F00;
+  line-height: 1.35; 
+  font-variant-numeric: lining-nums;
+  margin: 0.6em 0.4rem;
 }
 
-h4 {
-    font-size: 1.12rem;
-    /* 16px */
-    line-height: 1.375rem;
-    /* 22px */
-    margin-bottom: 1.5rem;
-    /* 24px */
-    color: white;
+em {
+  font-family: Georgia-Italic, STSongti-SC-Light, serif;
 }
 
-h5 {
-    font-size: 0.97rem;
-    /* 16px */
-    line-height: 1.25rem;
-    /* 22px */
-    margin-bottom: 1.5rem;
-    /* 24px */
-    font-weight: bold;
+strong em,
+em strong {
+  font-family: Georgia-BoldItalic, STSongti-SC-Regular, serif;
 }
 
-h6 {
-    font-size: 0.93rem;
-    /* 16px */
-    line-height: 1rem;
-    /* 16px */
-    margin-bottom: 0.75rem;
-    color: white;
-}
-
-@media (min-width: 980px) {
-    h3.md-focus:before,
-    h4.md-focus:before,
-    h5.md-focus:before,
-    h6.md-focus:before {
-        color: #ddd;
-        border: 1px solid #ddd;
-        border-radius: 3px;
-        position: absolute;
-        left: -1.642857143rem;
-        top: .357142857rem;
-        float: left;
-        font-size: 9px;
-        padding-left: 2px;
-        padding-right: 2px;
-        vertical-align: bottom;
-        font-weight: normal;
-        line-height: normal;
-    }
-
-    h3.md-focus:before {
-        content: 'h3';
-    }
-
-    h4.md-focus:before {
-        content: 'h4';
-    }
-
-    h5.md-focus:before {
-        content: 'h5';
-        top: 0px;
-    }
-
-    h6.md-focus:before {
-        content: 'h6';
-        top: 0px;
-    }
-}
-
-a {
-    text-decoration: none;
-    outline: 0;
-}
-
-a:hover {
-    outline: 0;
-}
-
-a:focus {
-    outline: thin dotted;
-}
-
-sup.md-footnote {
-    background-color: #555;
-    color: #ddd;
-}
-
-p {
-    -ms-word-wrap: break-word;
-    word-wrap: break-word;
-}
-
-p,
-ul,
-dd,
-ol,
-hr,
-address,
-pre,
-table,
-iframe,
-.wp-caption,
-.wp-audio-shortcode,
-.wp-video-shortcode {
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-    /* 24px */
-}
-
-li > blockquote {
-	margin-bottom: 0;
-}
-
-audio:not([controls]) {
-    display: none;
-}
-
-[hidden] {
-    display: none;
-}
-
-::-moz-selection {
-    background: #4a89dc;
-    color: #fff;
-    text-shadow: none;
-}
-
-*.in-text-selection,
-::selection {
-    background: #4a89dc;
-    color: #fff;
-    text-shadow: none;
-}
-
-ul,
-ol {
-    padding: 0 0 0 1.875rem;
-    /* 30px */
-}
-
-ul {
-    list-style: square;
-}
-
-ol {
-    list-style: decimal;
-}
-
-ul ul,
-ol ol,
-ul ol,
-ol ul {
-    margin: 0;
-}
-
-b,
-th,
-dt,
-strong {
-    font-weight: bold;
-}
-
-i,
-em,
-dfn,
-cite {
-    font-style: italic;
-}
-
-blockquote {
-    padding-left: 1.875rem;
-    margin: 0 0 1.875rem 1.875rem;
-    border-left: solid 2px #474d54;
-    padding-left: 30px;
-    margin-top: 35px;
-}
-
-pre,
-code,
-kbd,
-tt,
-var {
-    background: rgba(0, 0, 0, 0.05);
-    font-size: 0.875rem;
-    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-}
-
-kbd {
-    padding: 2px 4px;
-    font-size: 90%;
-    color: #fff;
-    background-color: #333;
-    border-radius: 3px;
-    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
-}
-
-pre.md-fences {
-    padding: 10px 10px 10px 30px;
-    margin-bottom: 20px;
-    background: #333;
-}
-
-.CodeMirror-gutters {
-    background: #333;
-    border-right: 1px solid transparent;
-}
-
-.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
-.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
-.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
-    bottom: -2.2em;
-    right: 4px;
-}
-
-code,
-kbd,
-tt,
-var {
-    padding: 2px 5px;
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
 }
 
 table {
-    max-width: 100%;
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
+  width: 100%;
+  border-collapse: collapse;
+}
+caption {
+  height: 30px;
+  line-height: 30px;
+  font-weight: 700;
+}
+thead th,
+tbody td {
+  padding:8px;
+  height: 19px;
+}
+thead th {
+  text-align: left;
+  color:#fff;
+  background-color: #B4EEB4;
+}
+tbody tr {
+  background-color: #fefefe;
+  color: #686868;
+}
+tbody tr:nth-child(even) {
+  background-color: #F0FFFF;
 }
 
-th,
-td {
-    padding: 5px 10px;
-    vertical-align: top;
+/* 复选框的列宽 */
+.row-selected {
+  width: 15px;
 }
 
+/* 去除默认边框 */
+fieldset, img {
+  display: block;
+  border: 0;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* 块/段落引用 */
+blockquote {
+  width: calc(100% - 1rem);
+  color: #999;
+  font-weight: 400;
+  border-top: 1px solid #10d673;
+  border-right: 1px solid #10d673;
+  border-bottom: 1px solid #10d673;
+  border-left: 7px solid #10d673;
+  margin: 0.2rem 0;
+  padding: 0.2rem 0 0.2rem 1rem;
+  overflow: auto;
+}
+
+pre {
+  margin: 0.6rem 0;
+}
+
+code {
+  width: 100%;
+}
+
+/* Firefox 以外，元素没有下划线，需添加 */
+acronym, abbr {
+  border-bottom: 1px dotted;
+  font-variant: normal;
+}
+
+/* 添加鼠标问号，进一步确保应用的语义是正确的（要知道，交互他们也有洁癖，如果你不去掉，那得多花点口舌） */
+abbr {
+  cursor: help;
+}
+
+address, caption, cite, code, dfn, th, var {
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* 去掉列表前的标识, li 会继承，大部分网站通常用列表来很多内容，所以应该当去 */
+ul, ol {
+  list-style: none;
+}
+
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+caption, th {
+  text-align: left;
+}
+
+q:before, q:after {
+  content: '';
+}
+
+/* 统一上标和下标 */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+:root sub, :root sup {
+  vertical-align: baseline; /* for ie9 and other modern browsers */
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* 让链接在 hover 状态下显示下划线 */
 a {
-    -webkit-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-}
-
-hr {
-    background: #474d54;
-    /* variable */
-}
-
-h1 {
-    margin-top: 2em;
-}
-
-a {
-    color: #e0e0e0;
-    text-decoration: underline;
+  color: #00B2EE;
+  font-weight: 400;
 }
 
 a:hover {
-    color: #fff;
+  text-decoration: underline;
 }
 
-.md-inline-math script {
-    color: #81b1db;
+#write a {
+  border-bottom: 1px solid #1abc9c;
 }
 
-b,
-th,
-dt,
-strong {
-    color: #DEDEDE;
-    /* variable */
+#write a:hover {
+  border-bottom-color: #555;
+  color: #555;
+  text-decoration: none;
 }
 
+/* 默认不显示下划线，保持页面简洁 */
+ins, a {
+  text-decoration: none;
+}
+
+/* 标记，类似于手写的荧光笔的作用 */
 mark {
-    background: #D3D40E;
+  background: #fffdd1;
+  border-bottom: 1px solid #ffedce;
+  padding: 2px;
+  margin: 0 5px;
 }
 
-blockquote {
-    color: #9DA2A6;
+/* 代码片断 */
+pre, code, pre tt {
+  font-family: Courier, 'Courier New', monospace;
 }
 
-table a {
-    color: #DEDEDE;
-    /* variable */
+#write .md-fences {
+  border: 1px solid #ddd;
+  padding: 1em 0.5em;
+  display: block;
+  -webkit-overflow-scrolling: touch;
 }
 
-th,
-td {
-    border: solid 1px #474d54;
-    /* variable */
+/* 一致化 horizontal rule */
+hr {
+  border: none;
+  border-bottom: 1px solid #cfcfcf;
+  margin-bottom: 0.8em;
+  height: 10px;
 }
 
-.task-list {
-    padding-left: 0;
+#write strong {
+  font-weight: bolder;
+  color: #000;
 }
 
-.md-task-list-item {
-    padding-left: 1.25rem;
+.code-tooltip.md-hover-tip strong {
+  color: white;
 }
 
-.md-task-list-item > input {
-    top: auto;
+/* 保证块/段落之间的空白隔行 */
+#write p, #write .md-fences, #write ul, #write ol, #write dl, #write form, #write hr, #write figure,
+#write-p, #write-pre, #write-ul, #write-ol, #write-dl, #write-form, #write-hr, #write-table, blockquote {
+  margin-bottom: 1.2em
 }
 
-.md-task-list-item > input:before {
-    content: "";
-    display: inline-block;
-    width: 0.875rem;
-    height: 0.875rem;
-    vertical-align: middle;
-    text-align: center;
-    border: 1px solid #b8bfc6;
-    background-color: #363B40;
-    margin-top: -0.4rem;
+html {
+  font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
 }
 
-.md-task-list-item > input:checked:before,
-.md-task-list-item > input[checked]:before {
-    content: '\221A';
-    /*◘*/
-    font-size: 0.625rem;
-    line-height: 0.625rem;
-    color: #DEDEDE;
+/* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6,
+#write-h1, #write-h2, #write-h3, #write-h4, #write-h5, #write-h6 {
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+  line-height: 1.35;
+  color: #000;
 }
 
-/** quick open **/
-.auto-suggest-container {
-    border: 0px;
-    background-color: #525C65;
+#write h1, #write-h1 {
+  font-size: 2.4em;
+  padding-bottom: 1em;
+  border-bottom: 3px double #eee;
 }
 
-#typora-quick-open {
-    background-color: #525C65;
+#write h2, #write-h2 {
+  font-size: 1.8em;
 }
 
-#typora-quick-open input{
-    background-color: #525C65;
-    border: 0;
-    border-bottom: 1px solid grey;
+#write h3, #write-h3 {
+  font-size: 1.6em;
 }
 
-.typora-quick-open-item {
-    background-color: inherit;
-    color: inherit;
+#write h4, #write-h4 {
+  font-size: 1.4em;
 }
 
-.typora-quick-open-item.active,
-.typora-quick-open-item:hover {
-    background-color: #4D8BDB;
-    color: white;
+#write h5, #write h6, #write-h5, #write-h6 {
+  font-size: 1.2em;
 }
 
-.typora-quick-open-item:hover {
-    background-color: rgba(77, 139, 219, 0.8);
+/* 在文章中，应该还原 ul 和 ol 的样式 */
+#write ul, #write-ul {
+  margin-left: 1.3em;
+  list-style: disc;
 }
 
-.typora-search-spinner > div {
-  background-color: #fff;
+#write ol, #write-ol {
+  list-style: decimal;
+  margin-left: 1.9em;
 }
 
-#write pre.md-meta-block {
-    border-bottom: 1px dashed #ccc;
-    background: transparent;
-    padding-bottom: 0.6em;
-    line-height: 1.6em;
+#write li ul, #write li ol, #write-ul ul, #write-ul ol, #write-ol ul, #write-ol ol {
+  margin-bottom: 0.8em;
+  margin-left: 2em;
 }
 
-.btn,
-.btn .btn-default {
-    background: transparent;
-    color: #b8bfc6;
+#write li ul, #write-ul ul, #write-ol ul {
+  list-style: circle;
 }
 
-.ty-table-edit {
-    border-top: 1px solid gray;
-    background-color: #363B40;
-}
-
-.popover-title {
-    background: transparent;
-}
-
-.md-image>.md-meta {
-    color: #BBBBBB;
-    background: transparent;
-}
-
-.md-expand.md-image>.md-meta {
-    color: #DDD;
-}
-
-#write>h3:before,
-#write>h4:before,
-#write>h5:before,
-#write>h6:before {
-    border: none;
-    border-radius: 0px;
-    color: #888;
-    text-decoration: underline;
-    left: -1.4rem;
-    top: 0.2rem;
-}
-
-#write>h3.md-focus:before {
-    top: 2px;
-}
-
-#write>h4.md-focus:before {
-    top: 2px;
-}
-
-.md-toc-item {
-    color: #A8C2DC;
-}
-
-#write div.md-toc-tooltip {
-    background-color: #363B40;
-}
-
-.dropdown-menu .btn:hover,
-.dropdown-menu .btn:focus,
-.md-toc .btn:hover,
-.md-toc .btn:focus {
-    color: white;
-    background: black;
-}
-
-#toc-dropmenu {
-    background: rgba(50, 54, 59, 0.93);
-    border: 1px solid rgba(253, 253, 253, 0.15);
-}
-
-#toc-dropmenu .divider {
-    background-color: #9b9b9b;
-}
-
-.outline-expander:before {
-    top: 2px;
-}
-
-#typora-sidebar {
-    box-shadow: none;
-    border-right: 1px dashed;
-    border-right: none;
-}
-
-.sidebar-tabs {
-    border-bottom:0;
-}
-
-#typora-sidebar:hover .outline-title-wrapper {
-    border-left: 1px dashed;
-}
-
-.outline-title-wrapper .btn {
-    color: inherit;
-}
-
-.outline-item:hover {
-    border-color: #363B40;
-    background-color: #363B40;
-    color: white;
-}
-
-h1.md-focus .md-attr,
-h2.md-focus .md-attr,
-h3.md-focus .md-attr,
-h4.md-focus .md-attr,
-h5.md-focus .md-attr,
-h6.md-focus .md-attr,
-.md-header-span .md-attr {
-    color: #8C8E92;
-    display: inline;
-}
-
-.md-comment {
-    color: #5a95e3;
-    opacity: 1;
-}
-
-.md-inline-math g,
-.md-inline-math svg {
-    stroke: #b8bfc6 !important;
-    fill: #b8bfc6 !important;
-}
-
-[md-inline='inline_math'] {
-    color: #9CB2E9;
-}
-
-#math-inline-preview .md-arrow:after {
-    background: black;
-}
-
-.modal-content {
-    background: var(--bg-color);
-    border: 0;
-}
-
-.modal-title {
-    font-size: 1.5em;
-}
-
-.modal-content input {
-    background-color: rgba(26, 21, 21, 0.51);
-    color: white;
-}
-
-.modal-content .input-group-addon {
-    background-color: rgba(0, 0, 0, 0.17);
-    color: white;
-}
-
-.modal-backdrop {
-    background-color: rgba(174, 174, 174, 0.7);
-}
-
-.modal-content .btn-primary {
-    border-color: var(--primary-color);
-}
-
-.md-table-resize-popover {
-    background-color: #333;
-}
-
-.form-inline .input-group .input-group-addon {
-    color: white;
-}
-
-#md-searchpanel {
-    border-bottom: 1px dashed grey;
-}
-
-/** UI for electron */
-
-.context-menu,
-#spell-check-panel,
-#footer-word-count-info {
-    background-color: #42464A;
-}
-
-.context-menu.dropdown-menu .divider,
-.dropdown-menu .divider {
-    background-color: #777777;
-}
-
-footer {
-    color: inherit;
-}
-
-@media (max-width: 1000px) {
-    footer {
-        border-top: none;
-    }
-    footer:hover {
-        color: inherit;
-    }
-}
-
-#file-info-file-path .file-info-field-value:hover {
-    background-color: #555;
-    color: #dedede;
-}
-
-.megamenu-content,
-.megamenu-opened header {
-    background: var(--bg-color);
-}
-
-.megamenu-menu-panel h2,
-.megamenu-menu-panel h1,
-.long-btn {
-    color: inherit;
-}
-
-.megamenu-menu-panel input[type='text'] {
-    background: inherit;
-    border: 0;
-    border-bottom: 1px solid;
-}
-
-#recent-file-panel-action-btn {
-    background: inherit;
-    border: 1px grey solid;
-}
-
-.megamenu-menu-panel .dropdown-menu > li > a {
-    color: inherit;
-    background-color: #2F353A;
-    text-decoration: none;
-}
-
-.megamenu-menu-panel table td:nth-child(1) {
-    color: inherit;
-    font-weight: bold;
-}
-
-.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
-    color: white;
-}
-
-.modal-footer .btn-default, 
-.modal-footer .btn-primary,
-.modal-footer .btn-default:not(:hover) {
-    border: 1px solid;
-    border-color: transparent;
-}
-
-.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
-    color: white;
-    border: 1px solid #ddd;
-    background-color: inherit;
-}
-
-.modal-header {
-    border-bottom: 0;
-}
-
-.modal-footer {
-    border-top: 0;
-}
-
-#recent-file-panel tbody tr:nth-child(2n-1) {
-    background-color: transparent !important;
-}
-
-.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
-    color: inherit;
-}
-
-.megamenu-menu-panel .btn {
-    border: 1px solid #eee;
-    background: transparent;
-}
-
-.mouse-hover .toolbar-icon.btn:hover,
-#w-full.mouse-hover,
-#w-pin.mouse-hover {
-    background-color: inherit;
-}
-
-.typora-node::-webkit-scrollbar {
-    width: 5px;
-}
-
-.typora-node::-webkit-scrollbar-thumb:vertical {
-    background: rgba(250, 250, 250, 0.3);
-}
-
-.typora-node::-webkit-scrollbar-thumb:vertical:active {
-    background: rgba(250, 250, 250, 0.5);
-}
-
-#w-unpin {
-    background-color: #4182c4;
-}
-
-#top-titlebar, #top-titlebar * {
-    color: var(--item-hover-text-color);
-}
-
-.typora-sourceview-on #toggle-sourceview-btn,
-#footer-word-count:hover,
-.ty-show-word-count #footer-word-count {
-    background: #333333;
-}
-
-#toggle-sourceview-btn:hover {
-    color: #eee;
-    background: #333333;
-}
-
-/** focus mode */
-.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
-    color: #686868 !important;
-}
-
-.on-focus-mode .md-end-block:not(.md-focus) img,
-.on-focus-mode .md-task-list-item:not(.md-focus-container)>input {
-    opacity: #686868 !important;
-}
-
-.on-focus-mode li[cid]:not(.md-focus-container){
-    color: #686868;
-}
 
-.on-focus-mode .md-fences.md-focus .CodeMirror-code>*:not(.CodeMirror-activeline) *,
-.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
-    color: #686868 !important;
+#write table th, #write table td {
+  border: 1px solid #ddd;
+  padding: 0.5em 1em;
+  color: #666;
 }
 
-.on-focus-mode .md-focus,
-.on-focus-mode .md-focus-container {
-    color: #fff;
+#write table .md-table-edit th {
+  border: none;
+  padding: 0;
+  color: inherit;
 }
 
-.on-focus-mode #typora-source .CodeMirror-code>*:not(.CodeMirror-activeline) * {
-    color: #686868 !important;
+#write table th, #write-table th {
+  background: #fbfbfb;
 }
-
 
-/*diagrams*/
-#write .md-focus .md-diagram-panel {
-    border: 1px solid #ddd;
-    margin-left: -1px;
-    width: calc(100% + 2px);
+#write table thead th, #write-table thead th {
+  background: #f1f1f1;
 }
 
-/*diagrams*/
-#write .md-focus.md-fences-with-lineno .md-diagram-panel {
-    margin-left: auto;
+#write table caption {
+  border-bottom: none;
 }
 
-.md-diagram-panel-error {
-    color: #f1908e;
+#write em {
+  font-weight: inherit;
+  font-style: inherit;
 }
 
-.active-tab-files #info-panel-tab-file,
-.active-tab-files #info-panel-tab-file:hover,
-.active-tab-outline #info-panel-tab-outline,
-.active-tab-outline #info-panel-tab-outline:hover {
-    color: #eee;
+li>p {
+    margin-bottom: 0 !important;
 }
 
-.sidebar-footer-item:hover,
-.footer-item:hover {
-    background: inherit;
-    color: white;
+/* Responsive images */
+#write img {
+  max-width: 100%;
 }
 
-.ty-side-sort-btn.active,
-.ty-side-sort-btn:hover,
-.selected-folder-menu-item a:after {
-    color: white;
+a.md-toc-inner {
+    border-bottom: 0 !important;
 }
 
-#sidebar-files-menu {
-    border:solid 1px;
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
-    background-color: var(--bg-color);
+.md-toc-h1:first-of-type:last-of-type{
+  display: none;
 }
 
-.file-list-item {
-    border-bottom:none;
+.md-toc {
+  font-size: inherit;
 }
 
-.file-list-item-summary {
-    opacity: 1;
+.md-toc-h1 .md-toc-inner {
+  font-weight: normal;
 }
 
-.file-list-item.active:first-child {
-    border-top: none;
+.md-table-edit th {
+  padding: 0 !important;
+  border: 0 !important;
 }
 
-.file-node-background {
-    height: 32px;
+.mac-seamless-mode #write {
+  min-height: calc(100vh - 6em - 20px);
 }
 
-.file-library-node.active>.file-node-content,
-.file-list-item.active {
-    color: white;
+.typora-quick-open-item.active {
     color: var(--active-file-text-color);
 }
 
-.file-library-node.active>.file-node-background{
-    background-color: rgb(34, 34, 34);
-    background-color: var(--active-file-bg-color);
-}
-.file-list-item.active {
-    background-color: rgb(34, 34, 34);
-    background-color: var(--active-file-bg-color);
+*.in-text-selection, ::selection {
+    background: #FFF69F;
+    text-shadow: none;
+    color: #e73636;
 }
 
-#ty-tooltip {
-    background-color: black;
-    color: #eee;
+.btn-primary {
+    background-color: #2d2d2d;
+    border-color: #020202;
 }
 
-.md-task-list-item>input {
-    margin-left: -1.3em;
-    margin-top: 0.3rem;
-    -webkit-appearance: none;
+.btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background-color: #4e4c4e;
+    border: #4e4c4e;
 }
 
-.md-mathjax-midline {
-    background-color: #57616b;
-    border-bottom: none;
+#preference-dialog .modal-content{
+  background: #6e757a;
+  --bg-color: #6e757a;
+  --text-color: #f1f1f1;
+  color: #f1f1f1;
 }
 
-footer.ty-footer {
-    border-color: #656565;
+#typora-source,
+.typora-sourceview-on  {
+  --bg-color: #eee;
+  background: #eee;
 }
+
+.cm-s-typora-default .cm-header, .cm-s-typora-default .cm-property {
+    color: #116098;
+}
+
+.cm-s-typora-default .cm-link {
+    color: #11987d;
+}
+
+.cm-s-typora-default .cm-em {
+  font-family: Georgia-Italic, STSongti-SC-Light, serif;
+  color: #6f6400;
+}
+
+.cm-s-typora-default .cm-em{
+    color: rgb(0, 22, 45);
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor{
+    border-left: 3px solid #6e757a;
+}
+
+.cm-s-typora-default .CodeMirror-selectedtext,
+.typora-sourceview-on .CodeMirror-focused .CodeMirror-selected {
+    background: #6e757a;
+    color: white;
+}
+
+.file-node-icon.fa.fa-folder:before {
+  color: rgba(32, 43, 51, 0.49);
+}
+
+#preference-dialog .megamenu-menu-panel h1 {
+  margin-bottom: 1em;
+}
+
+::-webkit-scrollbar-corner {
+  display: none;
+  background: transparent;
+}
+
