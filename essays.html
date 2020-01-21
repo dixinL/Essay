@@ -12,8 +12,8 @@
 
 <body>
   <div class="but_in">
-    <a href="javascript:void(0);" id="han" onclick="changetheme('han')" class="button button-3d button-primary button-rounded">Han主题</a>
-    <a href="javascript:void(0);" id="night" onclick="changetheme('night')" class="button button-3d button-primary button-rounded">Night主题</a>
+    <a href="javascript:void(0);" id="han" style="display: none" onclick="changetheme('han')" class="button button-3d button-primary button-rounded">Han主题</a>
+    <a href="javascript:void(0);" id="night" style="display: none" onclick="changetheme('night')" class="button button-3d button-primary button-rounded">Night主题</a>
   </div>
   <div id="content" class="ess_in">
 
@@ -95,6 +95,8 @@
   }
 
   .but_in {
-    height: 60px;
+    height: 30px;
+    text-align: right;
+    margin: 20px 50px 0;
   }
 </style>
