@@ -66,19 +66,17 @@ audio, canvas, video {
 }
 
 /* 要注意表单元素并不继承父级 font 的问题 */
-@media screen and (max-device-width:460px){
+body, input, select, textarea {
+  font: 300 1.3em/1.8 "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  body, input, select, textarea {
+    font: 300 1.6em/1.8 "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
+  }
+}
+@media screen and (min-width: 320px)and (max-width: 750px){
   body, input, select, textarea {
     font: 300 2.2em/1.8 "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
-  }
-}
-@media screen and (min-width:460px) and (max-width:960px){
-  body, input, select, textarea {
-    font: 300 1.8em/1.8 "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
-  }
-}
-@media screen and (min-width:960px){ 
-  body, input, select, textarea {
-    font: 300 1.3em/1.8 "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
   }
 }
 
