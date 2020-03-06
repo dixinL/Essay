@@ -109,6 +109,10 @@
       {
         "title": "《Web 前端黑客技术揭秘》笔记",
         "link": "%E3%80%8AWeb%20%E5%89%8D%E7%AB%AF%E9%BB%91%E5%AE%A2%E6%8A%80%E6%9C%AF%E6%8F%AD%E7%A7%98%E3%80%8B%E7%AC%94%E8%AE%B0.md"
+      },
+      {
+        "title": "《区块链-解密 构建基于信用的下一代互联网》",
+        "link": "%E3%80%8A%E5%8C%BA%E5%9D%97%E9%93%BE-%E8%A7%A3%E5%AF%86%20%E6%9E%84%E5%BB%BA%E5%9F%BA%E4%BA%8E%E4%BF%A1%E7%94%A8%E7%9A%84%E4%B8%8B%E4%B8%80%E4%BB%A3%E4%BA%92%E8%81%94%E7%BD%91%E3%80%8B.md"
       }
     ],
     "5": [
@@ -123,6 +127,14 @@
       {
         "title": "身份证校验",
         "link": "%E8%BA%AB%E4%BB%BD%E8%AF%81%E6%A0%A1%E9%AA%8C.md"
+      },
+      {
+        "title": "机器学习-LeetCode",
+        "link": "%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-LeetCode.md"
+      },
+      {
+        "title": "Android 绕过权限访问",
+        "link": "Android%20%E7%BB%95%E8%BF%87%E6%9D%83%E9%99%90%E8%AE%BF%E9%97%AE.md"
       }
     ]
   }
