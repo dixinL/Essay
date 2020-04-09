@@ -64,6 +64,7 @@
                               .then(function (response) {
                                    self.group = response.data.group;
                                    self.list = response.data.essay;
+                                   console.log(self.list);
                               })
                               .catch(function (error) {
                                    console.log(response);
