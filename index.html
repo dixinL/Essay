@@ -23,7 +23,7 @@
                     <div class="con-ggh" v-for="(item,index) in list" :key="index">
                          <div class="zcinfo fl">
                               <div class="contain">
-                                   <a v-for="(items,index) in item" :href="'https://dixinl.github.io/Essay/essays.html?md='+ this.class + '/' +items.link" style="padding: 0 10px"
+                                   <a v-for="items in item" :href="'https://dixinl.github.io/Essay/essays.html?md='+ index + '/' +items.link" style="padding: 0 10px"
                                         class="ck-m">{{items.title}}</a>
                               </div>
                          </div>
@@ -42,8 +42,7 @@
                data: function () {
                     return {
                          group: [],
-                         list: [],
-                         class: 0
+                         list: []
                     }
                },
                mounted: function () {
@@ -72,7 +71,6 @@
                               })
                     },
                     onclickbtn(index) {
-                         this.class = index;
                          var l = -(index * 80);
                          $(".main-page .nav div").removeClass("on");
                          $(".main-page .nav div").eq(index).addClass("on");
