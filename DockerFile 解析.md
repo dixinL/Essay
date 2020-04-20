@@ -69,7 +69,18 @@ RUN 用于在镜像容器中执行命令，其有以下两种命令执行方式�
 > ​    RUN apk update
 > ​    RUN ["/etc/execfile", "arg1", "arg1"]
 
-​	注：RUN指令创建的中间镜像会被缓存，并会在下次构建中使用。如果不想使用这些缓存镜像，可以在构建时指定 --no-cache 参数，如：docker build --no-cache
+​	注：RUN 指令创建的中间镜像会被缓存，并会在下次构建中使用。如果不想使用这些缓存镜像，可以在构建时指定 --no-cache 参数，如：docker build --no-cache
+
+- --rm 选项
+
+  - > docker run --rm Cname <==> docker run --rm=true Cname
+    >
+    > 在容器退出时就能够自动清理容器内部的文件系统，注意，--rm选项也会清理容器的匿名 data volumes。
+
+- -d 选项
+  - 后台运行容器，并返回容器 ID
+- -p 选项
+  - 指定端口映射，格式为：主机(宿主)端口：容器端口，如容器内 vue-cli 执行 yarn start：80:8080
 
 ### ADD：将本地文件添加到容器中，tar类型文件会自动解压(网络压缩资源不会被解压)，可以访问网络资源，类似wget
 
