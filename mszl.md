@@ -126,7 +126,7 @@ mvp就是如此，
 
 mvc中view是可以直接访问model的，
 
-![img](images/20130907171826234.png)
+![img](../images/20130907171826234.png)
 
 mtv模式本质与mvc没什么区别：
 
@@ -138,6 +138,6 @@ mtv模式本质与mvc没什么区别：
 >
 > 另外django还有一个url分发器，用于将url请求分发给不同的view处理。view再调用相应的model和temlate，个人理解类似于C
 
-![img](images/20130907173600843)
+![img](../images/20130907173600843)
 
-![img](images/20130907175211234)
+![img](../images/20130907175211234)

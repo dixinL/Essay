@@ -47,7 +47,7 @@ HTTP 协议中没有加密机制，但可以通过和 SSL（Secure Socket Layer�
 
 用 SSL建立安全通信线路之后，就可以在这条线路上进行 HTTP 通信了。与 SSL组合使用的 HTTP 被称为 HTTPS（HTTP Secure，超文本传输安全协议）或 HTTP over SSL。 
 
-![1565690038502](images/1565690038502.png)
+![1565690038502](../images/1565690038502.png)
 
 ### SSL
 
@@ -59,11 +59,11 @@ SSL采用一种叫做公开密钥加密（Public-key cryptography）的加密处
 
 #### **SSL证书认证方式**
 
-![1565694711159](images/1565694711159.png)
+![1565694711159](../images/1565694711159.png)
 
 #### HTTPS 通信方式
 
-![1565694670564](images/1565694670564.png)
+![1565694670564](../images/1565694670564.png)
 
 - 步骤 **1**： 客户端通过发送 Client Hello 报文开始 SSL通信。报文中包含客户端支持的 SSL的**指定版本、加密组件（Cipher Suite）列表（所使用的加密算法及密钥长度等）**。 
 
@@ -97,7 +97,7 @@ SSL采用一种叫做公开密钥加密（Public-key cryptography）的加密处
 
 为减轻跨站脚本攻击（XSS）造成的损失，建议事先在 Cookie 内加上 httponly 属性。
 
-![1565695947001](images/1565695947001.png)
+![1565695947001](../images/1565695947001.png)
 
 ## 当前HTTP的改进方法
 
@@ -107,7 +107,7 @@ Ajax 的核心技术是名为 XMLHttpRequest 的 API，通过 JavaScript 脚本�
 
 但Ajax 仍未解决 HTTP 协议本身存在的问题。 
 
-![1565740228336](images/1565740228336.png)
+![1565740228336](../images/1565740228336.png)
 
 #### Commet
 
@@ -115,7 +115,7 @@ Ajax 的核心技术是名为 XMLHttpRequest 的 API，通过 JavaScript 脚本�
 
 内容上虽然可以做到实时更新，但为了保留响应，一次连接的持续时间也变长了。期间，为了维持连接会消耗更多的资源。另外，Comet 也仍未解决 HTTP 协议本身存在的问题。 
 
-![1565740142429](images/1565740142429.png)
+![1565740142429](../images/1565740142429.png)
 
 #### Websocket
 
@@ -131,7 +131,7 @@ Ajax 的核心技术是名为 XMLHttpRequest 的 API，通过 JavaScript 脚本�
 
 JavaScript 可调用“The WebSocket API”（http://www.w3.org/TR/websockets/ ，由 W3C 标准制定）内提供的 WebSocket 程序接口，以实现 WebSocket 协议下全双工通信。
 
-![1565740073561](images/1565740073561.png)
+![1565740073561](../images/1565740073561.png)
 
 #### HTTP2.0
 
@@ -163,7 +163,7 @@ CGI（Common Gateway Interface，通用网关接口）是指 Web 服务器在接
 
 使用 CGI 的程序叫做 CGI 程序，通常是用 Perl、PHP、Ruby 和 C 等编程语言编写而成。 
 
-![1565748288506](images/1565748288506.png)
+![1565748288506](../images/1565748288506.png)
 
 #### Servelt
 

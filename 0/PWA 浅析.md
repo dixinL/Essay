@@ -63,27 +63,27 @@ PWA 未来的发展不做讨论，不过在国内类似功能的产物——小�
 >   "background_color": "#fff",	//为 web 应用程序预定义的背景颜色。此值在应用程序样式表中可以再次声明。它主要用于在样式表加载之前，当加载 manifest，浏览器可以用来绘制 web 应用程序的背景颜色。在启动 web 应用程序和加载应用程序的内容之间创建了一个平滑的过渡。	--注意：background_color 只是在 web 应用程序加载时提高用户体验，而当 web 应用程序的样式表可用时，不能替代作为背景颜色使用。
 >   "description": "A simply readable Hacker News app.",	//提供有关 Web 应用程序的一般描述。
 >   "icons": [{
->     "src": "images/touch/homescreen48.png",	//图像文件的路径。 如果 src 是一个相对 URL，则基本 URL 将是 manifest 的 URL。
+>     "src": "../images/touch/homescreen48.png",	//图像文件的路径。 如果 src 是一个相对 URL，则基本 URL 将是 manifest 的 URL。
 >     "sizes": "48x48",	//包含空格分隔的图像尺寸的字符串。
 >     "type": "image/png"	//提示图像的媒体类型。此字段的目的是允许用户代理快速忽略不支持的媒体类型的图像。
 >   }, {
->     "src": "images/touch/homescreen72.png",
+>     "src": "../images/touch/homescreen72.png",
 >     "sizes": "72x72",
 >     "type": "image/png"
 >   }, {
->     "src": "images/touch/homescreen96.png",
+>     "src": "../images/touch/homescreen96.png",
 >     "sizes": "96x96",
 >     "type": "image/png"
 >   }, {
->     "src": "images/touch/homescreen144.png",
+>     "src": "../images/touch/homescreen144.png",
 >     "sizes": "144x144",
 >     "type": "image/png"
 >   }, {
->     "src": "images/touch/homescreen168.png",
+>     "src": "../images/touch/homescreen168.png",
 >     "sizes": "168x168",
 >     "type": "image/png"
 >   }, {
->     "src": "images/touch/homescreen192.png",
+>     "src": "../images/touch/homescreen192.png",
 >     "sizes": "192x192",
 >     "type": "image/png"
 >   }],	//指定可在各种环境中用作应用程序图标的图像对象数组。 例如，它们可以用来在其他应用程序列表中表示 Web 应用程序，或者将 Web 应用程序与 OS 的任务切换器和 / 或系统偏好集成在一起。

@@ -45,7 +45,7 @@ clip-path: <clip-source> | [ <basic-shape> || <geometry-box> ] | none
 1. 使用clip-path要从同一个方向绘制，如果顺时针绘制就一律顺时针，逆时针就一律逆时针，因为polygon是一个连续线段，若线段彼此有交集，裁剪区域就会有相减的情况发生，当然如果你特意需要这样的效果除外。
 2. 如果绘制时采用比例的方式绘制，长宽就必须要先行设定，不然有可能绘制出来的长宽和我们想像的就会有差距，使用像素绘制就不会有这样的现象。
 
-![894563958-57d3e2cf3429c_articlex](images/894563958-57d3e2cf3429c_articlex.png)
+![894563958-57d3e2cf3429c_articlex](../images/894563958-57d3e2cf3429c_articlex.png)
 
 ## clip-path 实践网站
 
