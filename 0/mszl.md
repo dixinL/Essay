@@ -128,7 +128,7 @@ mvp就是如此，
 
 mvc中view是可以直接访问model的，
 
-![img](../images/20130907171826234.png)
+![img](./images/20130907171826234.png)
 
 mtv模式本质与mvc没什么区别：
 

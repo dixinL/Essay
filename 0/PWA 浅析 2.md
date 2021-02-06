@@ -8,7 +8,7 @@
 
 Service Worker 简单地理解为一个独立于前端项目，在后台运行的进程。因此，它不会阻塞浏览器脚本的运行，同时也无法直接访问浏览器相关的API（例如：DOM、localStorage等）。此外，即使在离开 Web App，甚至是关闭浏览器后，service work 仍然可以运行。来处理着缓存、推送、通知与同步等工作。所以，要学习PWA，绕不开的就是Service Worker。由于Service Work的权限很高，所有的代码都需要是安全的，所以 Service Worker 只能运行在 **HTTPS** 域下，也可以运行在 **localhost（127.0.0.1）**域下。
 
-![xapsgw6e7j](../images/xapsgw6e7j.jpeg)
+![xapsgw6e7j](./images/xapsgw6e7j.jpeg)
 
 客服端所有发起的请求都会被 fetch 这个监听器所监听。
 
@@ -44,7 +44,7 @@ Service Worker 要经历以下过程：
 在激活之后，Service Worker 将接管所有在自己管辖域范围内的页面，但是如果一个页面是刚刚注册了 Service Worker，那么它这一次不会被接管，到下一次加载页面的时候，Service Worker 才会生效。 
 当 Service Worker 接管了页面之后，它可能有两种状态：要么被终止以节省内存，要么会处理 fetch 和 message 事件，这两个事件分别产生于一个网络请求出现或者页面上发送了一个消息。 
 
-![20170215223617715](../images/20170215223617715.png)
+![20170215223617715](./images/20170215223617715.png)
 
 当我们注册了 Service Worker 后，它会经历生命周期的各个阶段，同时会触发相应的事件。整个生命周期包括了：installing --> installed --> activating --> activated --> redundant。当 Service Worker 安装（installed）完毕后，会触发install事件；而激活（activated）后，则会触发 activate 事件。
 
